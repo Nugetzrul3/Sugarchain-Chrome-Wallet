@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->
     <link href="css/bootstrap.min.css" rel="stylesheet">    
-    <link href="css/main.css" rel="stylesheet">
+    <link href="css/chaininfo.css" rel="stylesheet">
     <link href="css/entypo.css" rel="stylesheet">
 
     <!--JS-->
@@ -16,18 +16,44 @@
 </head>
 <body>
     <ul class="nav nav-tabs">
-        <li class="nav-item active">
-            <a class="nav-link" href="main.html">Home</a>
-        </li>
-
         <li class="nav-item">
             <a class="nav-link" href="balance.html">Your Balance</a>
         </li>
+
+        <li class="nav-item active">
+            <a class="nav-link" href="chaininfo.html">Chain info</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="settings.html">Settings</a>
+        </li>
+
     </ul>
+
+    <div class="displayHeight">
+        Block Height: <span id="blockHeight"></span>
+    </div>
+
+    <div class="displayHashrate">
+        Network Hashrate: <span id="netHashrate"></span>
+    </div>
+
+    <div class="displaySupply">
+        Circulating Supply: <span id="circSupply"></span>
+    </div>
+
+    <div class="displayPriceBTC">
+        SUGAR/BTC: <span id="priceBTC"></span>
+    </div>
+
+    <div class="displayPriceUSD">
+        SUGAR/USD: <span id="priceUSD"></span>
+    </div>
 </body>
 <footer class="mb-3" style="bottom: 0px;">
     <div class="container text-center">
         Made with <span class="entypo heart text-danger" style="font-size: 20px;"></span> by <a target="_blank" href="https://github.com/Nugetzrul3/Sugarchain-Chrome-Wallet">Nugetzrul3</a>
     </div>
+<script src="js/chaininfo.js"></script>
 </footer>
 </html>

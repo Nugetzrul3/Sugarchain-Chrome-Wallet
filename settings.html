@@ -2,56 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/balance.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">    
+    <link href="css/main.css" rel="stylesheet">
     <link href="css/entypo.css" rel="stylesheet">
 
     <!--JS-->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
+    
     <title>Document</title>
 </head>
 <body>
     <ul class="nav nav-tabs">
-        <li class="nav-item active">
-            <a class="nav-link active" href="balance.html">Your Balance</a>
+        <li class="nav-item">
+            <a class="nav-link" href="balance.html">Your Balance</a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" href="chaininfo.html">Chain info</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="settings.html">Settings</a>
         </li>
     </ul>
-    <input type="text" class="form-control docs-input" id="addressInput" placeholder="Address: sugar1q...">
-
-    <button type="button" class="btn btn-primary btn-block" id="balanceButton" style="width: 100%;">
-        Get Balance!
-    </button>
-
-    <div class="balanceDisplay">
-        Current Balance: <span id="currentBalance"></span>
-    </div>
-
-    <div class="recievedDisplay">
-        Total Received: <span id="currentRecieved"></span>
-    </div>
-
-    <div class="spentDisplay">
-        Total Sent: <span id="currentSpent"></span>
-    </div>
 </body>
 <footer class="mb-3" style="bottom: 0px;">
     <div class="container text-center">
         Made with <span class="entypo heart text-danger" style="font-size: 20px;"></span> by <a target="_blank" href="https://github.com/Nugetzrul3/Sugarchain-Chrome-Wallet">Nugetzrul3</a>
     </div>
 </footer>
-<!--Wallet Code-->
-<script src="js/wallet.js"></script>
 </html>
