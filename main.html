@@ -12,36 +12,26 @@
     <!--JS-->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 
     <title>Document</title>
 </head>
 <body>
     <ul class="nav nav-tabs">
         <li class="nav-item active">
-            <a class="nav-link active" href="balance.html">Your Wallet</a>
+            <a class="nav-link active" href="balance.html" tkey="your-wallet">Your Wallet</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="chaininfo.html">Chain info</a>
+            <a class="nav-link" href="chaininfo.html" tkey="chain-info">Chain info</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="settings.html">Settings</a>
+            <a class="nav-link" href="settings.html" tkey="chain-info">Settings</a>
         </li>
     </ul>
-    <input type="text" class="form-control docs-input" id="addressInput" placeholder="Address: sugar1q...">
 
-    <div class="balanceDisplay">
-        Current Balance: <span id="currentBalance"></span>
-    </div>
-
-    <div class="recievedDisplay">
-        Total Received: <span id="currentRecieved"></span>
-    </div>
-
-    <div class="spentDisplay">
-        Total Sent: <span id="currentSpent"></span>
-    </div>
+    <button class="btn btn-primary" style="width: 100%;" id="generateAddress">Generate Address</button>
 </body>
 <footer class="mb-3" style="bottom: 0px;">
     <div class="container text-center">

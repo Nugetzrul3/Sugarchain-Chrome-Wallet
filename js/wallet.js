@@ -9,9 +9,8 @@ window.onload = function (){
         }))
     }
 
-    document.getElementById("balanceButton").onclick = function() {getBalance(), getReceived(), caclSpent()}
-
     function getBalance() {
+        $("#currentBalance").text("loading...")
         apiCall().then(function(data) {
             var getbalance = data.result.balance
             var balance = getbalance / 100000000
@@ -20,6 +19,7 @@ window.onload = function (){
     }
 
     function getReceived() {
+        $("#currentRecieved").text("loading...")
         apiCall().then(function (data) {
             var getreceived = data.result.received
             var received = getreceived / 100000000
@@ -28,6 +28,7 @@ window.onload = function (){
     }
 
     function caclSpent() {
+        $("#currentSpent").text("loading...")
         apiCall().then(function (data) {
             var getreceived = data.result.received
             var getbalance = data.result.balance
@@ -35,4 +36,16 @@ window.onload = function (){
             $("#currentSpent").text(spent + " SUGAR")
             })
     }
+
+    setInterval(function() {
+        if ($("#addressInput").val().length == 45) {
+            getBalance()
+            getReceived()
+            caclSpent()
+        }
+
+        else if ($("#addressInput").val().length != 45) {
+            $("#currentBalance").text("Enter a valid sugarchain address")
+        }
+    }, 5000)
 }
