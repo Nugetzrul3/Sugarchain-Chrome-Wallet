@@ -17,6 +17,14 @@
 <body>
     <ul class="nav nav-tabs">
         <li class="nav-item">
+            <a class="nav-link" href="main.html" tkey="your-wallet">Create Wallet</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="na-link" href="import.html">Import Wallet</a>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link" href="balance.html">Your Wallet</a>
         </li>
 
@@ -29,54 +37,30 @@
         </li>
     </ul>
 
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Options</label>
-        </div>
-        <select class="custom-select" id="inputGroupSelect01">
-          <option selected>Choose...</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+    <div class="form-group">
+        <label for="languageSelect">Language</label>
+        <select class="form-control" id="languageSelect">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="kr">한국어</option>
+            <option value="id">Indonesian</option>
+            <option value="es">Español</option>
+            <option value="ru">Русский</option>
+            <option value="zh">简体中文</option>
+            <option value="ja">日本語</option>
         </select>
-      </div>
-      
-      <div class="input-group mb-3">
-        <select class="custom-select" id="inputGroupSelect02">
-          <option selected>Choose...</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+    </div>
+
+    <div class="form-group">
+        <label for="endpointSelect">Endpoint</label>
+        <select class="form-control" id="endpointSelect">
+            <option value="1" id="end1">Node 1 | Ping: </option>
+            <option value="2" id="end2">Node 2 | Ping: </option>
         </select>
-        <div class="input-group-append">
-          <label class="input-group-text" for="inputGroupSelect02">Options</label>
-        </div>
-      </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary" type="button">Button</button>
-        </div>
-        <select class="custom-select" id="inputGroupSelect03">
-          <option selected>Choose...</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
-      
-      <div class="input-group">
-        <select class="custom-select" id="inputGroupSelect04">
-          <option selected>Choose...</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button">Button</button>
-        </div>
-      </div>
+    </div>
+
 </body>
+<script src="js/settings.js"></script>
 <footer class="mb-3" style="bottom: 0px;">
     <div class="container text-center">
         Made with <span class="entypo heart text-danger" style="font-size: 20px;"></span> by <a target="_blank" href="https://github.com/Nugetzrul3/Sugarchain-Chrome-Wallet">Nugetzrul3</a>

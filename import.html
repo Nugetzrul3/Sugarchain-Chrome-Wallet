@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <!--CSS-->
-    <link href="css/bootstrap.min.css" rel="stylesheet">    
-    <link href="css/chaininfo.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/balance.css" rel="stylesheet">
     <link href="css/entypo.css" rel="stylesheet">
-
+    
     <!--JS-->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    
-    <title>Document</title>
 </head>
 <body>
     <ul class="nav nav-tabs">
@@ -20,48 +19,43 @@
             <a class="nav-link" href="main.html" tkey="your-wallet">Create Wallet</a>
         </li>
 
-        <li class="nav-item">
-            <a class="na-link" href="import.html">Import Wallet</a>
+        <li class="nav-item active">
+            <a class="na-link active" href="import.html">Import Wallet</a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" href="balance.html">Your Wallet</a>
         </li>
 
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="chaininfo.html">Chain info</a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" href="settings.html">Settings</a>
         </li>
-
     </ul>
 
-    <div class="displayHeight">
-        Block Height: <span id="blockHeight">loading...</span>
+    <input type="text" class="form-control docs-input" id="wifInput" placeholder="Import Sugarchain WIF key">
+
+    <button class="btn btn-primary" id="wifImport" style="width: 100%;">Import WIF</button>
+
+    <div class="legacyShow">
+        Legacy address: <span id="showLegacy"></span>
     </div>
 
-    <div class="displayHashrate">
-        Network Hashrate: <span id="netHashrate">loading...</span>
+    <div class="segwitShow">
+        Segwit address: <span id="showSegwit"></span>
     </div>
 
-    <div class="displaySupply">
-        Circulating Supply: <span id="circSupply">loading...</span>
-    </div>
-
-    <div class="displayPriceBTC">
-        SUGAR/BTC: <span id="priceBTC">loading...</span>
-    </div>
-
-    <div class="displayPriceUSD">
-        SUGAR/USD: <span id="priceUSD">loading...</span>
+    <div class="bech32Show">
+        Bech32 address: <span id="showBech32"></span>
     </div>
 </body>
+<script src="js/import.js"></script>
 <footer class="mb-3" style="bottom: 0px;">
     <div class="container text-center">
         Made with <span class="entypo heart text-danger" style="font-size: 20px;"></span> by <a target="_blank" href="https://github.com/Nugetzrul3/Sugarchain-Chrome-Wallet">Nugetzrul3</a>
     </div>
-<script src="js/chaininfo.js"></script>
 </footer>
 </html>

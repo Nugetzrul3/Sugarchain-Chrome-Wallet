@@ -1,5 +1,16 @@
 window.onload = function (){
-    api = "https://api.sugarchain.org"
+    var apiget = localStorage.getItem("api")
+    var getaddress = localStorage.getItem("address")
+
+    $("#addressInput").val(getaddress)
+    
+    if (apiget == null) {
+        var api = "https://api.sugarchain.org"
+    }
+    else {
+        var api = apiget
+    }
+    console.log(api)
 
     function apiCall() {
         return Promise.resolve($.ajax({
@@ -37,15 +48,22 @@ window.onload = function (){
             })
     }
 
-    setInterval(function() {
-        if ($("#addressInput").val().length == 45) {
-            getBalance()
-            getReceived()
-            caclSpent()
-        }
+    function checkAPI() {
+        apiCall().then(function(data) {
+            if (data.error == null) {
+                getBalance()
+                getReceived()
+                caclSpent()
+            }
+            else {
+                $("#currentBalance").text("Enter a valid Sugarchain address")
+                $("#currentRecieved").text("")
+                $("#currentSpent").text("")
+            }
+        })
+    }
 
-        else if ($("#addressInput").val().length != 45) {
-            $("#currentBalance").text("Enter a valid sugarchain address")
-        }
+    setInterval(function() {
+        checkAPI()
     }, 5000)
 }

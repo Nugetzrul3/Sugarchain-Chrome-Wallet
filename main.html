@@ -12,14 +12,21 @@
     <!--JS-->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
 
     <title>Document</title>
 </head>
 <body>
     <ul class="nav nav-tabs">
         <li class="nav-item active">
-            <a class="nav-link active" href="balance.html" tkey="your-wallet">Your Wallet</a>
+            <a class="nav-link active" href="main.html" tkey="your-wallet">Create Wallet</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="na-link" href="import.html">Import Wallet</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="balance.html" tkey="your-wallet">Your Wallet</a>
         </li>
 
         <li class="nav-item">
@@ -31,7 +38,25 @@
         </li>
     </ul>
 
+    <div class="form-group">
+        <label for="addressType">Address type:</label>
+        <select class="form-control" id="addressType">
+            <option value="1">bech32</option>
+            <option value="2">Segwit</option>
+            <option value="3">Legacy</option>
+        </select>
+    </div>
+
     <button class="btn btn-primary" style="width: 100%;" id="generateAddress">Generate Address</button>
+
+    <div class="displayAddress">
+        Your address: <span id="addressDisplay"></span>
+    </div>
+
+    <div class="displayWIF">
+        Your WIF key: <span id="wifDisplay"></span>
+    </div>
+    IMPORTANT: Make sure you store your WIF key in a secure place before doing anything else
 </body>
 <footer class="mb-3" style="bottom: 0px;">
     <div class="container text-center">
@@ -39,5 +64,5 @@
     </div>
 </footer>
 <!--Wallet Code-->
-<script src="js/wallet.js"></script>
+<script src="js/main.js"></script>
 </html>
