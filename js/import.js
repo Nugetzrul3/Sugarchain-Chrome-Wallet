@@ -31,3 +31,10 @@ $("#wifImport").click(function() {
     alert("WIF successfully imported")
 })
 
+window.onload = function() {
+    var getaddress = localStorage.getItem("address")
+    var href = "https://sugarchain.org/explorer/#/address/" + getaddress
+
+    $("#history").attr("href", href)
+}
+

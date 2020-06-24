@@ -1,4 +1,9 @@
 window.onload = function (){
+    var getaddress = localStorage.getItem("address")
+    var href = "https://sugarchain.org/explorer/#/address/" + getaddress
+
+    $("#history").attr("href", href)
+
     api = "https://api.sugarchain.org"
 
     function apiCall(call) {

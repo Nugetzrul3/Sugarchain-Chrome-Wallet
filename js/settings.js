@@ -1,5 +1,13 @@
 //api = "https://api.sugarchain.org"
 //localStorage.setItem("api", api)
+
+window.onload = function() {
+    var getaddress = localStorage.getItem("address")
+    var href = "https://sugarchain.org/explorer/#/address/" + getaddress
+
+    $("#history").attr("href", href)
+}
+
 var selectedEndpoint = $(this).children("option:selected").val()
 
 if (selectedEndpoint == "1") {
