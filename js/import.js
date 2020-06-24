@@ -27,5 +27,7 @@ $("#wifImport").click(function() {
     $("#showLegacy").text(legacyadd)
     $("#showBech32").text(bech32add)
     $("#showSegwit").text(segwitadd)
+
+    alert("WIF successfully imported")
 })
 

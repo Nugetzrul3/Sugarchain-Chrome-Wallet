@@ -45,4 +45,6 @@ $("#generateAddress").click(function() {
 
     localStorage.setItem("wifKey", wif)
     $("#wifDisplay").text(wif)
+
+    alert("Address Generated Successfully")
 })

@@ -9,7 +9,7 @@
         }
     ],
     "browser_action": {
-        "default_popup": "main.html",
+        "default_popup": "overlay.html",
         "default_title": "Sugarchain Wallet",
         "default_icon": "img/logo.png"
     }

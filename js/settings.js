@@ -13,3 +13,8 @@ else if (selectedEndpoint == "2") {
 }
 api = localStorage.getItem("api")
 console.log(api)
+
+$("#logoutButton").click(function (){
+    localStorage.removeItem("wifKey")
+    localStorage.removeItem("address")
+})
