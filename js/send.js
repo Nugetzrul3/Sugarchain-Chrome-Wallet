@@ -44,7 +44,7 @@ $("#sendTx").click(function () {
     var amount = $("#amountSUGAR").val()
     var receiver = $("#sendInput").val()
     Promise.resolve($.ajax({
-        url: api + "/unspent/" + address,// + "?amount=" + amount,
+        url: api + "/unspent/" + address + "?amount=" + amount,
         dataType: 'json',
         type: 'GET'
     })).then(function(data) {
