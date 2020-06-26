@@ -7,7 +7,13 @@ window.onload = function() {
 
     $("#history").attr("href", href)
 
+    localStorage.setItem("opened", "main.html")
+
     $("#addressDisplay").text(getaddress)
+
+    $(this).click(function() {
+        console.log("Test")
+    })
 
 }
 

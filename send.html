@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/balance.css" rel="stylesheet">
+    <link href="css/entypo.css" rel="stylesheet">
+
+    <!--JS-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="main.html" tkey="your-wallet">Create Wallet</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="na-link" href="import.html">Import Wallet</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="balance.html">Your Wallet</a>
+        </li>
+
+        <li class="nav-item active">
+            <a class="nav-link active" href="send.html">Send</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" id="history" href="#" target="_blank">History</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="chaininfo.html">Chain info</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="settings.html">Settings</a>
+        </li>
+    </ul>
+    <label for="sendInput">Send To: </label>
+    <input type="text" class="form-control docs-input" id="sendInput" placeholder="Address: sugar1q...">
+
+    <label for="amountSUGAR">Amount SUGAR: </label>
+    <input type="text" class="form-control docs-input" id="amountSUGAR" placeholder="100">
+
+    <button class="btn btn-primary" id="sendTx" style="width: 100%;">Send Transaction</button>
+
+</body>
+<footer class="mb-3" style="bottom: 0px;">
+    <div class="container text-center">
+        <h5>Remember to <a href="settings.html">Logout</a> before exiting the extension</h5>
+        <h6>Made with <span class="entypo heart text-danger" style="font-size: 20px;"></span> by <a target="_blank" href="https://github.com/Nugetzrul3/Sugarchain-Chrome-Wallet">Nugetzrul3</a></h6>
+    </div>
+</footer>
+<!--Wallet Code-->
+<script src="js/send.js"></script>
+</html>

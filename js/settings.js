@@ -5,6 +5,8 @@ window.onload = function() {
     var getaddress = localStorage.getItem("address")
     var href = "https://sugarchain.org/explorer/#/address/" + getaddress
 
+    localStorage.setItem("opened", "settings.html")
+
     $("#history").attr("href", href)
 }
 
@@ -25,4 +27,5 @@ console.log(api)
 $("#logoutButton").click(function (){
     localStorage.removeItem("wifKey")
     localStorage.removeItem("address")
+    localStorage.removeItem("opened")
 })

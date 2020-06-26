@@ -40,6 +40,8 @@ window.onload = function() {
     var getaddress = localStorage.getItem("address")
     var href = "https://sugarchain.org/explorer/#/address/" + getaddress
 
+    localStorage.setItem("opened", "import.html")
+
     $("#history").attr("href", href)
 }
 
