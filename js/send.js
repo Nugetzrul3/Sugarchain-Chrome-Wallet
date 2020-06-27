@@ -28,7 +28,7 @@ window.onload = function() {
 $("#sendTx").click(function () {
     var amount = $("#amountSUGAR").val()
     var receiver = $("#sendInput").val()
-    confirm("Confirm Transaction. You are about to send " + amount + " SUGAR to " + receiver)
+    ask = confirm("Confirm Transaction. You are about to send " + amount + " SUGAR to " + receiver)
     if (ask == true){
         var showErrororSuccess = $("#showErrororSuccess")
         showErrororSuccess.text("Sending Transaction...")
