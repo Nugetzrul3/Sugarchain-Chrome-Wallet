@@ -1,5 +1,5 @@
 # Sugarchain-Chrome-Wallet
-Light sugarchain Web wallet in the form of a chrome extension
+Light sugarchain Web wallet in the form of a chrome extension which utilises bitcoin.js and a simple REST API https://api.sugarchain.org
 
 
 ### Installation
