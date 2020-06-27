@@ -26,102 +26,108 @@ window.onload = function() {
 }
 
 $("#sendTx").click(function () {
-    var showErrororSuccess = $("#showErrororSuccess")
-    showErrororSuccess.text("Sending Transaction...")
-    var netconfig = {					
-        'network': {
-            'messagePrefix': '\x19Sugarchain Signed Message:\n',
-            'bip32': {
-                'public': 0x0488b21e,
-                'private': 0x0488ade4
-            },
-            'bech32': 'sugar',
-            'pubKeyHash': 0x3F,
-            'scriptHash': 0x7D,
-            'wif': 0x80}
-    }
-
     var amount = $("#amountSUGAR").val()
     var receiver = $("#sendInput").val()
-    Promise.resolve($.ajax({
-        url: api + "/unspent/" + address + "?amount=" + amount,
-        dataType: 'json',
-        type: 'GET'
-    })).then(function(data) {
-        txbuilder = bitcoin.TransactionBuilder(netconfig['network'])
-        txbuilder.setVersion(2)
-
-        txbuilder.addOutput(receiver, amount)
-
-        var prevtxid = data.result[0].txid
-        var txindex = data.result[0].index
-        var txvalue = data.result[0].value
-
-        var script = bitcoin.Buffer(data.result.script, 'hex')
-        var typeofaddress = scriptType(script)
-
-        if (typeofaddress == 'bech32') {
-            var bech32script = bitcoin.payments.p2wpkh({'pubkey': wif.publicKey, 'network': netconfig['network']})
-
-            txbuilder.addInput(prevtxid, txindex, null, bech32script.output)
+    var ask = confirm("Confirm Transaction. You are about to send " + amount + " SUGAR to " + receiver)
+    if (ask == true){
+        var showErrororSuccess = $("#showErrororSuccess")
+        showErrororSuccess.text("Sending Transaction...")
+        var netconfig = {					
+            'network': {
+                'messagePrefix': '\x19Sugarchain Signed Message:\n',
+                'bip32': {
+                    'public': 0x0488b21e,
+                    'private': 0x0488ade4
+                },
+                'bech32': 'sugar',
+                'pubKeyHash': 0x3F,
+                'scriptHash': 0x7D,
+                'wif': 0x80}
         }
 
-        else {
-            txbuilder.addInput(txid, txindex)
-        }
+        Promise.resolve($.ajax({
+            url: api + "/unspent/" + address + "?amount=" + amount,
+            dataType: 'json',
+            type: 'GET'
+        })).then(function(data) {
+            txbuilder = bitcoin.TransactionBuilder(netconfig['network'])
+            txbuilder.setVersion(2)
 
-        if (txvalue >= amount) {
-            var txchange = value - amount
-            if (change > 0) {
-                txbuilder.addOutput(receiver, txchange)
+            txbuilder.addOutput(receiver, amount)
+
+            var prevtxid = data.result[0].txid
+            var txindex = data.result[0].index
+            var txvalue = data.result[0].value
+
+            var script = bitcoin.Buffer(data.result.script, 'hex')
+            var typeofaddress = scriptType(script)
+
+            if (typeofaddress == 'bech32') {
+                var bech32script = bitcoin.payments.p2wpkh({'pubkey': wif.publicKey, 'network': netconfig['network']})
+
+                txbuilder.addInput(prevtxid, txindex, null, bech32script.output)
             }
 
-            switch (typeofaddress) {
-                case 'bech32':
-                    txbuilder.sign(0, wif, null, null, txvalue, null)
-                    break
-                
-                case 'segwit':
-                    var redeem = bitcoin.payments.p2wpkh({'pubkey': wif.publicKey, 'network': netconfig['network']})
-                    var segwitscript = bitcoin.payments.p2sh({'redeem': redeem, 'network': netconfig['network']})
-
-                    txbuilder.sign(0, wif, segwitscript.output, null, txvalue, null)
-                    break
-                
-                case 'legacy':
-                    txbuilder.sign(0, wif)
-                    break
-                
-                default:
-                    showErrororSuccess.text("Bad UTXO")
+            else {
+                txbuilder.addInput(txid, txindex)
             }
 
-            var txfinal = txbuilder.build()
-
-            Promise.resolve($.ajax({
-                'url': api + "/broadcast/" + tx,
-                'method': 'POST',
-                'data': {
-                    'raw': txfinal.toHex()
-                }
-            })).then(function(data) {
-                if (data.error == null) {
-                    showErrororSuccess.text("Success! Transaction ID: " + data.result)
+            if (txvalue >= amount) {
+                var txchange = value - amount
+                if (change > 0) {
+                    txbuilder.addOutput(receiver, txchange)
                 }
 
-                else {
-                    showErrororSuccess.text("Broadcast Failed! Error: " + data.error)
+                switch (typeofaddress) {
+                    case 'bech32':
+                        txbuilder.sign(0, wif, null, null, txvalue, null)
+                        break
+                    
+                    case 'segwit':
+                        var redeem = bitcoin.payments.p2wpkh({'pubkey': wif.publicKey, 'network': netconfig['network']})
+                        var segwitscript = bitcoin.payments.p2sh({'redeem': redeem, 'network': netconfig['network']})
+
+                        txbuilder.sign(0, wif, segwitscript.output, null, txvalue, null)
+                        break
+                    
+                    case 'legacy':
+                        txbuilder.sign(0, wif)
+                        break
+                    
+                    default:
+                        showErrororSuccess.text("Bad UTXO")
                 }
 
-                resetForm()
-            })
-            
-        }
+                var txfinal = txbuilder.build()
 
-        else {
-            showErrororSuccess.text("Error: Not enough funds")
-        }
-    })
+                Promise.resolve($.ajax({
+                    'url': api + "/broadcast/" + tx,
+                    'method': 'POST',
+                    'data': {
+                        'raw': txfinal.toHex()
+                    }
+                })).then(function(data) {
+                    if (data.error == null) {
+                        showErrororSuccess.text("Success! Transaction ID: " + data.result)
+                    }
+
+                    else {
+                        showErrororSuccess.text("Broadcast Failed! Error: " + data.error)
+                    }
+
+                    resetForm()
+                })
+                
+            }
+
+            else {
+                showErrororSuccess.text("Error: Not enough funds")
+            }
+        })
+    }
+    else {
+        showErrororSuccess.text("You cancled the transaction")
+    }
 })
 
 function scriptType(script) {
