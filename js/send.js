@@ -28,7 +28,7 @@ window.onload = function() {
 $("#sendTx").click(function () {
     var amount = $("#amountSUGAR").val()
     var receiver = $("#sendInput").val()
-    var ask = confirm("Confirm Transaction. You are about to send " + amount + " SUGAR to " + receiver)
+    confirm("Confirm Transaction. You are about to send " + amount + " SUGAR to " + receiver)
     if (ask == true){
         var showErrororSuccess = $("#showErrororSuccess")
         showErrororSuccess.text("Sending Transaction...")
@@ -69,12 +69,12 @@ $("#sendTx").click(function () {
             }
 
             else {
-                txbuilder.addInput(txid, txindex)
+                txbuilder.addInput(prevtxid, txindex)
             }
 
             if (txvalue >= amount) {
-                var txchange = value - amount
-                if (change > 0) {
+                var txchange = txvalue - amount
+                if (txchange > 0) {
                     txbuilder.addOutput(receiver, txchange)
                 }
 
