@@ -3,10 +3,11 @@
 
 
 var wif
+var wifKey
 var api
 var address
 window.onload = function() {
-    wif = localStorage.getItem("wifKey")
+    wifKey = localStorage.getItem("wifKey")
     address = localStorage.getItem("address")
 
     localStorage.setItem("opened", "send.html")
@@ -26,9 +27,14 @@ window.onload = function() {
 }
 
 $("#sendTx").click(function () {
-    var amount = $("#amountSUGAR").val()
+    var fee = 1000
+    var amount = convertAmountFormat($("#amountSUGAR").val()) + fee
+    console.log(amount)
     var receiver = $("#sendInput").val()
-    ask = confirm("Confirm Transaction. You are about to send " + amount + " SUGAR to " + receiver)
+
+    var scripts = []
+
+    ask = confirm("Confirm Transaction. You are about to send " + $("#amountSUGAR").val() + " SUGAR to " + receiver + ". The fee is 0.00001 SUGAR\nTotal Cost: " + (amount / 100000000) + " SUGAR")
     if (ask == true){
         var showErrororSuccess = $("#showErrororSuccess")
         showErrororSuccess.text("Sending Transaction...")
@@ -45,31 +51,39 @@ $("#sendTx").click(function () {
                 'wif': 0x80}
         }
 
+        wif = bitcoin.ECPair.fromWIF(wifKey, netconfig['network'])
+
         Promise.resolve($.ajax({
             url: api + "/unspent/" + address + "?amount=" + amount,
             dataType: 'json',
             type: 'GET'
         })).then(function(data) {
-            txbuilder = bitcoin.TransactionBuilder(netconfig['network'])
+
+            var txbuilder = new bitcoin.TransactionBuilder(netconfig['network'])
             txbuilder.setVersion(2)
 
             txbuilder.addOutput(receiver, amount)
+            
+            var txvalue = 0
+            for (var i = 0, size = data.result.length; i < size; i++) {
+                var prevtxid = data.result[i].txid
+                var txindex = data.result[i].index
+                txvalue += data.result[i].value
 
-            var prevtxid = data.result[0].txid
-            var txindex = data.result[0].index
-            var txvalue = data.result[0].value
+                var script = bitcoin.Buffer(data.result[i].script, 'hex')
+                var typeofaddress = scriptType(script)
 
-            var script = bitcoin.Buffer(data.result.script, 'hex')
-            var typeofaddress = scriptType(script)
+                if (typeofaddress == 'bech32') {
+                    var bech32script = bitcoin.payments.p2wpkh({'pubkey': wif.publicKey, 'network': netconfig['network']})
 
-            if (typeofaddress == 'bech32') {
-                var bech32script = bitcoin.payments.p2wpkh({'pubkey': wif.publicKey, 'network': netconfig['network']})
+                    txbuilder.addInput(prevtxid, txindex, null, bech32script.output)
+                }
 
-                txbuilder.addInput(prevtxid, txindex, null, bech32script.output)
-            }
+                else {
+                    txbuilder.addInput(prevtxid, txindex)
+                }
 
-            else {
-                txbuilder.addInput(prevtxid, txindex)
+                scripts.push({'script': script, 'type': typeofaddress, 'value': data.result[i].value})
             }
 
             if (txvalue >= amount) {
@@ -78,30 +92,33 @@ $("#sendTx").click(function () {
                     txbuilder.addOutput(receiver, txchange)
                 }
 
-                switch (typeofaddress) {
-                    case 'bech32':
-                        txbuilder.sign(0, wif, null, null, txvalue, null)
-                        break
-                    
-                    case 'segwit':
-                        var redeem = bitcoin.payments.p2wpkh({'pubkey': wif.publicKey, 'network': netconfig['network']})
-                        var segwitscript = bitcoin.payments.p2sh({'redeem': redeem, 'network': netconfig['network']})
+                for (var i = 0, size = scripts.length; i < size; i++){
+                    switch (scripts[i].type) {
+                        case 'bech32':
+                            var value = scripts[i].value
+                            txbuilder.sign(i, wif, null, null, value, null)
+                            break
+                        
+                        case 'segwit':
+                            var value = scripts[i].value
+                            var redeem = bitcoin.payments.p2wpkh({'pubkey': wif.publicKey, 'network': netconfig['network']})
+                            var segwitscript = bitcoin.payments.p2sh({'redeem': redeem, 'network': netconfig['network']})
 
-                        txbuilder.sign(0, wif, segwitscript.output, null, txvalue, null)
-                        break
-                    
-                    case 'legacy':
-                        txbuilder.sign(0, wif)
-                        break
-                    
-                    default:
-                        showErrororSuccess.text("Bad UTXO")
+                            txbuilder.sign(i, wif, segwitscript.output, null, value, null)
+                            break
+                        
+                        case 'legacy':
+                            txbuilder.sign(i, wif)
+                            break
+                        
+                        default:
+                            showErrororSuccess.text("Bad UTXO")
+                    }
                 }
-
                 var txfinal = txbuilder.build()
 
                 Promise.resolve($.ajax({
-                    'url': api + "/broadcast/" + tx,
+                    'url': api + '/broadcast',
                     'method': 'POST',
                     'data': {
                         'raw': txfinal.toHex()
@@ -112,7 +129,7 @@ $("#sendTx").click(function () {
                     }
 
                     else {
-                        showErrororSuccess.text("Broadcast Failed! Error: " + data.error)
+                        showErrororSuccess.text("Broadcast Failed! Error: " + data.error.message)
                     }
 
                     resetForm()
@@ -126,22 +143,23 @@ $("#sendTx").click(function () {
         })
     }
     else {
+        var showErrororSuccess = $("#showErrororSuccess")
         showErrororSuccess.text("You cancled the transaction")
     }
 })
 
 function scriptType(script) {
-    var type
+    var type = undefined
 
     if (script[0] == bitcoin.opcodes.OP_0 && script[1] == 20) {
         type = 'bech32'
     }
 
-    else if (script[0] == bitcoin.opcodes.OP_HASH160 && script[1] == 20) {
+    if (script[0] == bitcoin.opcodes.OP_HASH160 && script[1] == 20) {
         type = 'segwit'
     }
 
-    else if (script[0] == bitcoin.opcodes.OP_DUP && script[1] == bitcoin.opcodes.OP_HASH160 && script[2] == 20) {
+    if (script[0] == bitcoin.opcodes.OP_DUP && script[1] == bitcoin.opcodes.OP_HASH160 && script[2] == 20) {
         type = 'legacy'
     }
 
@@ -150,7 +168,16 @@ function scriptType(script) {
 }
 
 function resetForm() {
-    amount.val('')
-    receiver.val('')
-    showErrororSuccess.text('')
+    $("#amountSUGAR").val('')
+    $("#sendInput").val('')
+}
+
+function convertAmountFormat(amount, invert = false) {
+    decimals  = 8
+    if (!invert) {
+        return parseFloat((amount / Math.pow(10, decimals)).toFixed(decimals))
+    }
+    else {
+        return parseInt(amount * Math.pow(10, decimals))
+    }
 }
