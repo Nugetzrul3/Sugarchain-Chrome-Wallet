@@ -28,13 +28,14 @@ window.onload = function() {
 
 $("#sendTx").click(function () {
     var fee = 1000
-    var amount = convertAmountFormat($("#amountSUGAR").val()) + fee
+    var amount = convertAmountFormat(parseFloat($("#amountSUGAR").val())+ convertAmountFormat(fee), true)
     console.log(amount)
+    var amountShow = convertAmountFormat(amount)
     var receiver = $("#sendInput").val()
 
     var scripts = []
 
-    ask = confirm("Confirm Transaction. You are about to send " + $("#amountSUGAR").val() + " SUGAR to " + receiver + ". The fee is 0.00001 SUGAR\nTotal Cost: " + (amount / 100000000) + " SUGAR")
+    ask = confirm("Confirm Transaction. You are about to send " + $("#amountSUGAR").val() + " SUGAR to " + receiver + ". The fee is 0.00001 SUGAR\nTotal Cost: " + amountShow + " SUGAR")
     if (ask == true){
         var showErrororSuccess = $("#showErrororSuccess")
         showErrororSuccess.text("Sending Transaction...")
@@ -54,7 +55,7 @@ $("#sendTx").click(function () {
         wif = bitcoin.ECPair.fromWIF(wifKey, netconfig['network'])
 
         Promise.resolve($.ajax({
-            url: api + "/unspent/" + address + "?amount=" + amount,
+            url: api + "/unspent/" + address + "?amount=" + parseInt(amountShow, 10),
             dataType: 'json',
             type: 'GET'
         })).then(function(data) {
@@ -62,7 +63,7 @@ $("#sendTx").click(function () {
             var txbuilder = new bitcoin.TransactionBuilder(netconfig['network'])
             txbuilder.setVersion(2)
 
-            txbuilder.addOutput(receiver, amount)
+            txbuilder.addOutput(receiver, (amount - fee))
             
             var txvalue = 0
             for (var i = 0, size = data.result.length; i < size; i++) {
@@ -89,7 +90,8 @@ $("#sendTx").click(function () {
             if (txvalue >= amount) {
                 var txchange = txvalue - amount
                 if (txchange > 0) {
-                    txbuilder.addOutput(receiver, txchange)
+                    txbuilder.addOutput(address, txchange)
+                    console.log(txchange)
                 }
 
                 for (var i = 0, size = scripts.length; i < size; i++){
@@ -116,6 +118,7 @@ $("#sendTx").click(function () {
                     }
                 }
                 var txfinal = txbuilder.build()
+                console.log(txfinal.toHex())
 
                 Promise.resolve($.ajax({
                     'url': api + '/broadcast',
@@ -173,7 +176,7 @@ function resetForm() {
 }
 
 function convertAmountFormat(amount, invert = false) {
-    decimals  = 8
+    decimals = 8
     if (!invert) {
         return parseFloat((amount / Math.pow(10, decimals)).toFixed(decimals))
     }
