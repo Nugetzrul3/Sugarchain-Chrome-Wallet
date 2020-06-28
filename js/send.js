@@ -96,7 +96,7 @@ $("#sendTx").click(function () {
                     switch (scripts[i].type) {
                         case 'bech32':
                             var value = scripts[i].value
-                            txbuilder.sign(txindex, wif, null, null, value, null)
+                            txbuilder.sign(i, wif, null, null, value, null)
                             break
                         
                         case 'segwit':
@@ -104,11 +104,11 @@ $("#sendTx").click(function () {
                             var redeem = bitcoin.payments.p2wpkh({'pubkey': wif.publicKey, 'network': netconfig['network']})
                             var segwitscript = bitcoin.payments.p2sh({'redeem': redeem, 'network': netconfig['network']})
 
-                            txbuilder.sign(txindex, wif, segwitscript.output, null, value, null)
+                            txbuilder.sign(i, wif, segwitscript.output, null, value, null)
                             break
                         
                         case 'legacy':
-                            txbuilder.sign(txindex, wif)
+                            txbuilder.sign(i, wif)
                             break
                         
                         default:
