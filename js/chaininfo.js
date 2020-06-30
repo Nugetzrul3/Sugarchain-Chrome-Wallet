@@ -123,7 +123,7 @@ var lang = {
 
     'id': {
         // Page text
-        'block-height': "Blok Tinggi:",
+        'block-height': "tinggi blok:",
         'net-hash': "Jaringan Tingkat-Hash:",
         'circ-supply': "Beredar Pasokan:",
 
@@ -157,7 +157,7 @@ var lang = {
         // Page text
         'block-height': "блок высота:",
         'net-hash': "сеть хешрейт:",
-        'circ-supply': "Предложение:",
+        'circ-supply': "круг поставок:",
 
         // Tab text
         'create-wallet': "Кошелька Создайте",
