@@ -17,36 +17,36 @@
 <body>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link" href="main.html" tkey="your-wallet">Create Wallet</a>
+            <a class="nav-link" href="main.html"><span id="create-wallet">Create Wallet</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="na-link" href="import.html">Import Wallet</a>
+            <a class="na-link" href="import.html"><span id="import-wallet">Import Wallet</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="balance.html">Your Wallet</a>
+            <a class="nav-link" href="balance.html"><span id="your-wallet">Your Wallet</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="send.html">Send</a>
+            <a class="nav-link" href="send.html"><span id="send">Send</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" id="history" href="#" target="_blank">History</a>
+            <a class="nav-link" id="history" href="#" target="_blank"><span id="tx-history">History</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="chaininfo.html">Chain info</a>
+            <a class="nav-link" href="chaininfo.html"><span id="chain-info">Chain info</span></a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="settings.html">Settings</a>
+            <a class="nav-link" href="settings.html"><span id="settings">Settings</span></a>
         </li>
     </ul>
 
     <div class="form-group">
-        <label for="languageSelect">Language</label>
+        <label for="languageSelect" id="langlabel"></label>
         <select class="form-control" id="languageSelect">
             <option value="en">English</option>
             <option value="fr">Français</option>
@@ -60,22 +60,22 @@
     </div>
 
     <div class="form-group">
-        <label for="endpointSelect">Endpoint</label>
+        <label for="endpointSelect" id="endpointLabel"></label>
         <select class="form-control" id="endpointSelect">
-            <option value="1" id="end1">Node 1 | Ping: </option>
-            <option value="2" id="end2">Node 2 | Ping: </option>
+            <option value="mainnet" id="end1">Mainnet</option>
+            <option value="testnet" id="end2">Testnet</option>
         </select>
     </div>
 
     <div class="container text-center">
-        <a href="index.html" class="btn btn-danger" id="logoutButton" style="width: 100%;">Logout</a>
+        <a href="index.html" class="btn btn-danger" id="logoutButton" style="width: 100%;"></a>
     </div>
 
 </body>
 <script src="js/settings.js"></script>
 <footer class="mb-3" style="bottom: 0px;">
     <div class="container text-center">
-        <h6>View <a href="LICENSE" target="_blank">License</a></h6>
+        <a href="LICENSE" target="_blank"><h6 id="license1">License</h6></a>
         <h6>Made with <span class="entypo heart text-danger" style="font-size: 20px;"></span> by <a target="_blank" href="https://github.com/Nugetzrul3/Sugarchain-Chrome-Wallet">Nugetzrul3</a></h6>
     </div>
 </footer>

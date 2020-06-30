@@ -18,47 +18,47 @@
 <body>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link" href="main.html" tkey="your-wallet">Create Wallet</a>
+            <a class="nav-link" href="main.html"><span id="create-wallet">Create Wallet</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="na-link" href="import.html">Import Wallet</a>
+            <a class="na-link" href="import.html"><span id="import-wallet">Import Wallet</span></a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link active" href="balance.html">Your Wallet</a>
+            <a class="nav-link" href="balance.html"><span id="your-wallet">Your Wallet</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="send.html">Send</a>
+            <a class="nav-link" href="send.html"><span id="send">Send</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" id="history" href="#" target="_blank">History</a>
+            <a class="nav-link" id="history" href="#" target="_blank"><span id="tx-history">History</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="chaininfo.html">Chain info</a>
+            <a class="nav-link" href="chaininfo.html"><span id="chain-info">Chain info</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="settings.html">Settings</a>
+            <a class="nav-link" href="settings.html"><span id="settings">Settings</span></a>
         </li>
     </ul>
     <div class="addressShow" style="padding-top: 5px;">
-        <input type="text" class="form-control docs-input" id="addressInput" placeholder="Address: sugar1q...">
+        <input type="text" class="form-control docs-input" id="addressInput" placeholder="sugar1q...">
     </div>
 
     <div class="balanceDisplay">
-        Current Balance: <span id="currentBalance">loading...</span>
+        <span id="current-balance">Current Balance:</span> <span id="currentBalance">loading...</span>
     </div>
 
     <div class="recievedDisplay">
-        Total Received: <span id="currentRecieved">loading...</span>
+        <span id="total-received">Total Received:</span> <span id="currentRecieved">loading...</span>
     </div>
 
     <div class="spentDisplay">
-        Total Sent: <span id="currentSpent">loading...</span>
+        <span id="total-sent">Total Sent:</span> <span id="currentSpent">loading...</span>
     </div>
 </body>
 <footer class="mb-3" style="bottom: 0px;">

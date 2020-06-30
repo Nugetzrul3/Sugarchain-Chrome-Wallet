@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,36 +18,36 @@
 <body>
     <ul class="nav nav-tabs">
         <li class="nav-item active">
-            <a class="nav-link active" href="main.html" tkey="your-wallet">Create Wallet</a>
+            <a class="nav-link" href="main.html"><span id="create-wallet"></span></a>
         </li>
 
         <li class="nav-item">
-            <a class="na-link" href="import.html">Import Wallet</a>
+            <a class="na-link" href="import.html"><span id="import-wallet"></span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="balance.html" tkey="your-wallet">Your Wallet</a>
+            <a class="nav-link" href="balance.html"><span id="your-wallet"></span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="send.html">Send</a>
+            <a class="nav-link" href="send.html"><span id="send"></span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" id="history" href="#" target="_blank">History</a>
+            <a class="nav-link" id="history" href="#" target="_blank"><span id="tx-history"></span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="chaininfo.html" tkey="chain-info">Chain info</a>
+            <a class="nav-link" href="chaininfo.html"><span id="chain-info"></span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="settings.html" tkey="chain-info">Settings</a>
+            <a class="nav-link" href="settings.html"><span id="settings"></span></a>
         </li>
     </ul>
 
     <div class="form-group">
-        <label for="addressType">Address type:</label>
+        <label for="addressType" id="addressTypeLabel"></label>
         <select class="form-control" id="addressType">
             <option value="1">bech32</option>
             <option value="2">Segwit</option>
@@ -55,16 +55,16 @@
         </select>
     </div>
 
-    <button class="btn btn-primary" style="width: 100%;" id="generateAddress">Generate Address</button>
+    <button class="btn btn-primary" style="width: 100%;" id="generateAddress"></button>
 
     <div class="displayAddress">
-        Your address: <span id="addressDisplay"></span>
+        <span id="your-address"></span> <span id="addressDisplay"></span>
     </div>
 
     <div class="displayWIF">
-        Your WIF key: <span id="wifDisplay"></span>
+        <span id="your-wif"></span> <span id="wifDisplay"></span>
     </div>
-    IMPORTANT: Make sure you store your WIF key in a secure place before doing anything else
+    <p style="text-align: center; font-weight: 700;" id="importantmsg"></p>
 </body>
 <footer class="mb-3" style="bottom: 0px;">
     <div class="container text-center">

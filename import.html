@@ -16,49 +16,49 @@
 <body>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link" href="main.html" tkey="your-wallet">Create Wallet</a>
+            <a class="nav-link" href="main.html"><span id="create-wallet">Create Wallet</span></a>
         </li>
 
         <li class="nav-item active">
-            <a class="na-link active" href="import.html">Import Wallet</a>
+            <a class="na-link" href="import.html"><span id="import-wallet">Import Wallet</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="balance.html" href="#">Your Wallet</a>
+            <a class="nav-link" href="balance.html"><span id="your-wallet">Your Wallet</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="send.html">Send</a>
+            <a class="nav-link" href="send.html"><span id="send">Send</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" id="history" target="_blank">History</a>
+            <a class="nav-link" id="history" href="#" target="_blank"><span id="tx-history">History</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="chaininfo.html">Chain info</a>
+            <a class="nav-link" href="chaininfo.html"><span id="chain-info">Chain info</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="settings.html">Settings</a>
+            <a class="nav-link" href="settings.html"><span id="settings">Settings</span></a>
         </li>
     </ul>
 
     <div class="importShow" style="padding-top: 5px; padding-bottom: 5px;">
-        <input type="text" class="form-control docs-input" id="wifInput" placeholder="Import Sugarchain WIF key">
+        <input type="text" class="form-control docs-input" id="wifInput" placeholder="Sugarchain WIF">
     </div>
     <button class="btn btn-primary" id="wifImport" style="width: 100%;">Import WIF</button>
 
     <div class="legacyShow">
-        Legacy address: <span id="showLegacy"></span>
+        <span id="legacy">Legacy address:</span> <span id="showLegacy"></span>
     </div>
 
     <div class="segwitShow">
-        Segwit address: <span id="showSegwit"></span>
+        <span id="segwit">Segwit address:</span> <span id="showSegwit"></span>
     </div>
 
     <div class="bech32Show">
-        Bech32 address: <span id="showBech32"></span>
+        <span id="bech32">Bech32 address:</span> <span id="showBech32"></span>
     </div>
 </body>
 <script src="js/import.js"></script>
