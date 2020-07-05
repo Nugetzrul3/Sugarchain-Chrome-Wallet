@@ -172,11 +172,11 @@ var lang = {
         'alertmsg': "Alamat Dihasilkan Berhasil",
 
         // Tab text
-        'create-wallet': "Dompet Membuat",
-        'import-wallet': "Dompet Impor",
+        'create-wallet': "Membuat Dompet",
+        'import-wallet': "Impor Dompet",
         'your-wallet': "Dompet Anda",
         'send': "Kirim",
-        'tx-history': "Sejarah",
+        'tx-history': "Riwayat",
         'chain-info': "Data Rantai",
         'settings': "Pengaturan"
     },

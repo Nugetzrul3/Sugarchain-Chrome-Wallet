@@ -71,8 +71,7 @@ function getSendAPI() {
 
 $("#sendTx").click(function () {
     var fee = 1000
-    var amount = convertAmountFormat(parseFloat($("#amountSUGAR").val())+ convertAmountFormat(fee), true)
-    console.log(amount)
+    var amount = convertAmountFormat(parseInt($("#amountSUGAR").val()), true) + fee
     var amountShow = convertAmountFormat(amount)
     var receiver = $("#sendInput").val()
 
@@ -122,7 +121,6 @@ $("#sendTx").click(function () {
                 var txchange = txvalue - amount
                 if (txchange > 0) {
                     txbuilder.addOutput(address, txchange)
-                    console.log(txchange)
                 }
 
                 for (var i = 0, size = scripts.length; i < size; i++){
@@ -149,7 +147,6 @@ $("#sendTx").click(function () {
                     }
                 }
                 var txfinal = txbuilder.build()
-                console.log(txfinal.toHex())
 
                 Promise.resolve($.ajax({
                     'url': api + '/broadcast',
@@ -307,11 +304,11 @@ var lang = {
         },
 
         // Tab text
-        'create-wallet': "Dompet Membuat",
-        'import-wallet': "Dompet Impor",
+        'create-wallet': "Membuat Dompet",
+        'import-wallet': "Impor Dompet",
         'your-wallet': "Dompet Anda",
         'send': "Kirim",
-        'tx-history': "Sejarah",
+        'tx-history': "Riwayat",
         'chain-info': "Data Rantai",
         'settings': "Pengaturan"
     },

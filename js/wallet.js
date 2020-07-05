@@ -138,16 +138,16 @@ var lang = {
 
     'id': {
         // Page text
-        'current-balance': "Mutakhir Saldo:",
+        'current-balance': "Saldo Sekarang:",
         'total-received': "Total Diterima:",
         'total-sent': "Total Dikirim:",
 
         // Tab text
-        'create-wallet': "Dompet Membuat",
-        'import-wallet': "Dompet Impor",
+        'create-wallet': "Membuat Dompet",
+        'import-wallet': "Impor Dompet",
         'your-wallet': "Dompet Anda",
         'send': "Kirim",
-        'tx-history': "Sejarah",
+        'tx-history': "Riwayat",
         'chain-info': "Data Rantai",
         'settings': "Pengaturan"
     },

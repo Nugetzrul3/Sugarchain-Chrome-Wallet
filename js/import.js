@@ -174,11 +174,11 @@ var lang = {
         "alert2": "WIF batal",
 
         // Tab text
-        'create-wallet': "Dompet Membuat",
-        'import-wallet': "Dompet Impor",
+        'create-wallet': "Membuat Dompet",
+        'import-wallet': "Impor Dompet",
         'your-wallet': "Dompet Anda",
         'send': "Kirim",
-        'tx-history': "Sejarah",
+        'tx-history': "Riwayat",
         'chain-info': "Data Rantai",
         'settings': "Pengaturan"
     },
@@ -204,21 +204,21 @@ var lang = {
 
     'ru': {
         // Page text
-        'wifImport': "ввозить WIF",
-        'legacy': "Legacy Адрес:",
-        'segwit': "Segwit Адрес:",
-        'bech32': "Bech32 Адрес:",
-        'alert1': "WIF импортный Успешно",
-        "alert2": "WIF недействительный",
-
+        'wifImport': "Импорт WIF ключа",
+        'legacy': "Legacy адрес:",
+        'segwit': "Segwit адрес:",
+        'bech32': "Bech32 адрес:",
+        'alert1': "WIF ключ успешно импортирован",
+        "alert2": "Недействительный WIF",
+    
         // Tab text
-        'create-wallet': "Кошелька Создайте",
-        'import-wallet': "Кошелька ввозить",
-        'your-wallet': "Кошелька Ваш",
-        'send': "послать",
-        'tx-history': "история",
-        'chain-info': "Информация сеть",
-        'settings': "настройки"
+        'create-wallet': "Создать кошелек",
+        'import-wallet': "Импортировать кошелек",
+        'your-wallet': "Ваш кошелек",
+        'send': "Отправить",
+        'tx-history': "История",
+        'chain-info': "Информация о сети",
+        'settings': "Настройки"
     },
 
     'zh': {
