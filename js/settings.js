@@ -12,7 +12,7 @@ window.onload = function() {
 
     var apiget = localStorage.getItem("apiSet")
 
-    // Sets History Tab to open to explorer
+    // Sets History Tab to open to explorer according to testnet or mainnet
     if (apiget == "mainnet") {
         href = "https://sugarchain.org/explorer/#/address/" + getaddress
     }
@@ -26,6 +26,7 @@ window.onload = function() {
 
 selectedEndpoint.onchange = function () {
     localStorage.setItem("apiSet", this.value)
+    // Set API on change
     setAPI()
     localStorage.removeItem("address")
     document.location.reload()
@@ -33,6 +34,7 @@ selectedEndpoint.onchange = function () {
 
 var mainnet = "https://api.sugarchain.org"
 var testnet = "https://api-testnet.sugarchain.org"
+// Set the api in local storage
 function setAPI() {
     var apiSet = localStorage.getItem("apiSet")
 

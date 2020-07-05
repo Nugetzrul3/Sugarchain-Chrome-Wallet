@@ -2,12 +2,12 @@ var api
 var prefix
 var href
 window.onload = function (){
-    var getaddress = localStorage.getItem("address")
-
+    // Set overlay.js to open to chain info page
     localStorage.setItem("opened", "chaininfo.html")
 
     apiget = localStorage.getItem("apiSet")
 
+    // Set history page to open to explorer according to mainnet or testnet & set ticker according to mainnet or testnet
     if (apiget == "mainnet") {
         api = "https://api.sugarchain.org"
         prefix = "SUGAR"
@@ -21,6 +21,7 @@ window.onload = function (){
         $("#history").attr("href", href)
     }
 
+    // Define function to make api request according to certain call
     function apiCall(call) {
         return Promise.resolve($.ajax({
             url: api + call,
@@ -61,6 +62,7 @@ window.onload = function (){
         })
     }
 
+    // Loop functions to continuously show chain info
     setInterval(function() {
         getBlockHeight()
         getNetHash()

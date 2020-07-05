@@ -9,17 +9,21 @@ var address
 var netconfig
 var href
 window.onload = function() {
+    // Get WIF and address from local storage
     wifKey = localStorage.getItem("wifKey")
     address = localStorage.getItem("address")
 
+    // Define variable to set placeholder if user chooses mainnet or testnet
     var inputPlaceholder = $("#sendInput")
 
+    // Set overlay.js to open to send page
     localStorage.setItem("opened", "send.html")
 
     setSendPageLang()
 
     apiget = localStorage.getItem("apiSet")
 
+    // Set history page to open to explorer & sets placeholder to testnet or mainnet prefix
     if (apiget == "mainnet") {
         api = "https://api.sugarchain.org"
         inputPlaceholder.attr("placeholder", "sugar1q...")
@@ -71,10 +75,9 @@ function getSendAPI() {
 
 $("#sendTx").click(function () {
     var fee = 1000
+    // Don't put fee in convertion of amount format
     var amount = convertAmountFormat(parseFloat($("#amountSUGAR").val()), true) + fee
     var amountShow = convertAmountFormat(amount)
-    console.log(amount)
-    console.log(amountShow)
     var receiver = $("#sendInput").val()
 
     var scripts = []
@@ -86,6 +89,7 @@ $("#sendTx").click(function () {
 
         wif = bitcoin.ECPair.fromWIF(wifKey, netconfig['network'])
 
+        // Get unspent values to calculate change and sending value
         Promise.resolve($.ajax({
             url: api + "/unspent/" + address + "?amount=" + parseInt(amountShow, 10),
             dataType: 'json',
@@ -121,7 +125,9 @@ $("#sendTx").click(function () {
 
             if (txvalue >= amount) {
                 var txchange = txvalue - amount
+                // If the change is greater than 0, send the change back to the sender
                 if (txchange > 0) {
+                    // Send change back to sender
                     txbuilder.addOutput(address, txchange)
                 }
 
@@ -149,7 +155,8 @@ $("#sendTx").click(function () {
                     }
                 }
                 var txfinal = txbuilder.build()
-
+                
+                // Broadcast the transaction to the network
                 Promise.resolve($.ajax({
                     'url': api + '/broadcast',
                     'method': 'POST',
@@ -158,10 +165,12 @@ $("#sendTx").click(function () {
                     }
                 })).then(function(data) {
                     if (data.error == null) {
+                        // Success message according to language set
                         showErrororSuccess.text(errororsuccess['success'] + data.result)
                     }
 
                     else {
+                        // Broadcast error according to language set
                         showErrororSuccess.text(errororsuccess['error']['broadcast'] + data.error.message)
                     }
 
@@ -171,16 +180,19 @@ $("#sendTx").click(function () {
             }
 
             else {
+                // Fund error according to language set
                 showErrororSuccess.text(errororsuccess['error']['funds'])
             }
         })
     }
     else {
+        // User transaction canceled according to language set
         var showErrororSuccess = $("#showErrororSuccess")
         showErrororSuccess.text(errororsuccess['error']['cancel'])
     }
 })
 
+// Get type of address given the script hash
 function scriptType(script) {
     var type = undefined
 
@@ -200,11 +212,13 @@ function scriptType(script) {
 
 }
 
+// Reset the values after user sends
 function resetForm() {
     $("#amountSUGAR").val('')
     $("#sendInput").val('')
 }
 
+// Conversion of standars integer to satoshis
 function convertAmountFormat(amount, invert = false) {
     decimals = 8
     if (!invert) {

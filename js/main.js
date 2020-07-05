@@ -83,7 +83,9 @@ $("#generateAddress").click(function() {
         localStorage.setItem("address", address)
     }
 
+    // Sets WIF key in local storage for sending
     localStorage.setItem("wifKey", wif)
+    // WIF key only showed once for security purposes
     $("#wifDisplay").text(wif)
 
     alert(alertmsg)

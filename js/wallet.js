@@ -2,16 +2,21 @@ var api
 var prefix
 var href
 window.onload = function (){
+    // Get address from local storage
     var getaddress = localStorage.getItem("address")
 
+    // Set overlay.js to open to balance page
     localStorage.setItem("opened", "balance.html")
 
+    // Define variable to set placeholder if user chooses mainnet or testnet
     var inputPlaceholder = $("#addressInput")
 
+    // Set the address in the input so that it gets balance
     $("#addressInput").val(getaddress)
     
     apiget = localStorage.getItem("apiSet")
 
+    // Set history page to open to explorer, sets placeholder to testnet or mainnet prefix & sets ticker according to mainnet or testnet
     if (apiget == "mainnet") {
         api = "https://api.sugarchain.org"
         prefix = "SUGAR"
@@ -27,6 +32,7 @@ window.onload = function (){
         $("#history").attr("href", href)
     }
 
+    // Define function to make api get request
     function apiCall() {
         return Promise.resolve($.ajax({
             url: api + "/balance/" + $("#addressInput").val(),
@@ -78,6 +84,7 @@ window.onload = function (){
         })
     }
 
+    // Set loop to continuously update balance 
     setInterval(function() {
         checkAPI()
     }, 5000)

@@ -4,12 +4,8 @@
 var netconfig
 var href
 window.onload = function() {
-    var getaddress = localStorage.getItem("address")
-    //var href = "https://sugarchain.org/explorer/#/address/" + getaddress
-
+    // Set overlay.js to open to import page
     localStorage.setItem("opened", "import.html")
-
-    //$("#history").attr("href", href)
 
     setImportLang()
 
@@ -63,8 +59,10 @@ function getImportAPI() {
 var alert1
 var alert2
 $("#wifImport").click(function() {
+    // If the WIF Key is 51 or 52 character length, run import function
     if ($("#wifInput").val().length == 52 || $("#wifInput").val().length == 51) {
 
+        // Get WIF from the user input
         var wifInput = $("#wifInput").val()
 
         var wifKey = bitcoin.ECPair.fromWIF(wifInput, netconfig['network'])
@@ -76,6 +74,7 @@ $("#wifImport").click(function() {
 
         alert(alert1)
 
+        // Only set bech32 address and WIF key
         localStorage.setItem("address", bech32add)
         localStorage.setItem("wifKey", $("#wifInput").val())
     
@@ -83,6 +82,7 @@ $("#wifImport").click(function() {
         $("#showBech32").text(bech32add)
         $("#showSegwit").text(segwitadd)
     }
+    // Else show error
     else if ($("#wifInput").val().length != 52 || $("#wifInput").val().length != 51){
         alert(alert2)
 
