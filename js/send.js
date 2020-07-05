@@ -71,8 +71,10 @@ function getSendAPI() {
 
 $("#sendTx").click(function () {
     var fee = 1000
-    var amount = convertAmountFormat(parseInt($("#amountSUGAR").val()), true) + fee
+    var amount = convertAmountFormat(parseFloat($("#amountSUGAR").val()), true) + fee
     var amountShow = convertAmountFormat(amount)
+    console.log(amount)
+    console.log(amountShow)
     var receiver = $("#sendInput").val()
 
     var scripts = []
