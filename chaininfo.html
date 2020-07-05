@@ -46,25 +46,50 @@
 
     </ul>
 
-    <div class="displayHeight">
-        <span id="block-height">Block Height:</span> <span id="blockHeight">loading...</span>
-    </div>
-
-    <div class="displayHashrate">
-        <span id="net-hash">Network Hashrate:</span> <span id="netHashrate">loading...</span>
-    </div>
-
-    <div class="displaySupply">
-        <span id="circ-supply">Circulating Supply:</span> <span id="circSupply">loading...</span>
-    </div>
-
-    <div class="displayPriceBTC">
-        SUGAR/BTC: <span id="priceBTC">loading...</span>
-    </div>
-
-    <div class="displayPriceUSD">
-        SUGAR/USD: <span id="priceUSD">loading...</span>
-    </div>
+    <table class="table table-striped table-sm" style="height: fit-content; width: 100%;">
+        <tbody>
+            <tr>
+                <td>
+                    <span id="block-height">Block Height:</span>
+                </td>
+                <td align="right">
+                    <span id="blockHeight">loading...</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span id="net-hash">Network Hashrate:</span>
+                </td>
+                <td align="right">
+                    <span id="netHashrate">loading...</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span id="circ-supply">Circulating Supply:</span>
+                </td>
+                <td align="right">
+                    <span id="circSupply">loading...</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SUGAR/BTC:
+                </td>
+                <td align="right">
+                    <span id="priceBTC">loading...</span> BTC
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SUGAR/USD:
+                </td>
+                <td align="right">
+                    $<span id="priceUSD">loading...</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 <footer class="mb-3" style="bottom: 0px;">
     <div class="container text-center">
