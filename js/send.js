@@ -74,7 +74,18 @@ function getSendAPI() {
 }
 
 $("#sendTx").click(function () {
-    var fee = 1000
+    var feeinput = document.getElementById("feeSugar")
+    console.log(feeinput.value)
+    var fee = undefined
+    var feeShow = undefined
+    if (feeinput && feeinput.value) {
+        fee = convertAmountFormat(feeinput.value, true)
+        feeShow = convertAmountFormat(fee)
+    }
+    else {
+        fee = 1000
+        feeShow = convertAmountFormat(fee)
+    }
     // Don't put fee in convertion of amount format
     var amount = convertAmountFormat(parseFloat($("#amountSUGAR").val()), true) + fee
     var amountShow = convertAmountFormat(amount)
@@ -82,7 +93,7 @@ $("#sendTx").click(function () {
 
     var scripts = []
 
-    ask = confirm("Confirm Transaction. You are about to send " + $("#amountSUGAR").val() + " SUGAR to " + receiver + ". The fee is 0.00001 SUGAR\nTotal Cost: " + amountShow + " SUGAR")
+    ask = confirm("Confirm Transaction. You are about to send " + $("#amountSUGAR").val() + " SUGAR to " + receiver + ". The fee is " + feeShow/*(amountShow - Number($("#amountSUGAR").val()))*/ + " SUGAR\nTotal Cost: " + amountShow + " SUGAR")
     if (ask == true){
         var showErrororSuccess = $("#showErrororSuccess")
         showErrororSuccess.text("Sending Transaction...")
@@ -216,6 +227,7 @@ function scriptType(script) {
 function resetForm() {
     $("#amountSUGAR").val('')
     $("#sendInput").val('')
+    $("#feeSugar").val('')
 }
 
 // Conversion of standars integer to satoshis

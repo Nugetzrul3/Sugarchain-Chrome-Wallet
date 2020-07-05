@@ -1,6 +1,6 @@
 body {
     min-width: max-content; /* your desired width */
-    min-height: 100px;
+    min-height: 150px;
     max-width: 100%;
     position: relative;
     vertical-align:middle;

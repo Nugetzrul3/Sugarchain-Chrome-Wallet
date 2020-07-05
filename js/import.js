@@ -4,6 +4,7 @@
 var netconfig
 var href
 window.onload = function() {
+    var getaddress = localStorage.getItem("address")
     // Set overlay.js to open to import page
     localStorage.setItem("opened", "import.html")
 
