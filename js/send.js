@@ -392,15 +392,15 @@ var lang = {
 
     'ru': {
         // Page text
-        'send-to': "послать к: ",
-        'amount-sugar': "сумма: ",
-        'sendTx': "послать трансакция",
+        'send-to': "Отправить к: ",
+        'amount-sugar': "Сумма: ",
+        'sendTx': "Отправить",
         'showErrororSuccess': {
-            'success': "Success! трансакция ID: ",
+            'success': "Транзакция успешно отправлена: ",
             'error': {
-                'broadcast': "передача не смогли! погрешность: ",
-                'funds': "ошибка: Недостаточно фонды",
-                'cancel': "трансакция отменен",
+                'broadcast': "Ошибка передачи: ",
+                'funds': "Ошибка: недостаточный баланс",
+                'cancel': "Отменить",
             },
         },
         'logoutreminder': {
@@ -410,13 +410,13 @@ var lang = {
         },
 
         // Tab text
-        'create-wallet': "Кошелька Создайте",
-        'import-wallet': "Кошелька ввозить",
-        'your-wallet': "Кошелька Ваш",
-        'send': "послать",
-        'tx-history': "история",
-        'chain-info': "Информация сеть",
-        'settings': "настройки"
+        'create-wallet': "Создать кошелек",
+        'import-wallet': "Импорт кошелька",
+        'your-wallet': "Ваш кошелек",
+        'send': "Отправить",
+        'tx-history': "История",
+        'chain-info': "Информация о сети",
+        'settings': "Настройки"
     },
 
     'zh': {
