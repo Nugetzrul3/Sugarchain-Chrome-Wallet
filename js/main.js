@@ -223,21 +223,21 @@ var lang = {
 
     'zh': {
         // Page text
-        'generateAddress': "生成 地址",
+        'generateAddress': "生成地址",
         'addressTypeLabel': "地址类型:",
-        'your-address': "你的 地址:",
-        'your-wif': "你的 WIF:",
+        'your-address': "你的地址:",
+        'your-wif': "你的WIF:",
         'importantmsg': "重要: 在执行其他任何操作之前，请确保将WIF密钥存储在安全的地方",
-        'alertmsg': "地址 产生的 成功地",
+        'alertmsg': "地址产生的成功",
 
         // Tab text
-        'create-wallet': "创造 钱包",
-        'import-wallet': "进口 钱包",
-        'your-wallet': "你的 钱包",
+        'create-wallet': "创建钱包",
+        'import-wallet': "导入钱包",
+        'your-wallet': "你的钱包",
         'send': "发送",
         'tx-history': "历史",
-        'chain-info': "网络 信息",
-        'settings': "设定值"
+        'chain-info': "网络信息",
+        'settings': "设置"
     },
 
     'ja': {
