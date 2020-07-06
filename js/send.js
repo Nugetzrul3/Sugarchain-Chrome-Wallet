@@ -391,26 +391,26 @@ var lang = {
 
     'zh': {
         // Page text
-        'send-to': "发给: ",
-        'amount-sugar': "量: ",
-        'sendTx': "发送 交易",
+        'send-to': "发送至: ",
+        'amount-sugar': "数量: ",
+        'sendTx': "发送交易",
         'showErrororSuccess': {
             'success': "成功! 交易 ID: ",
             'error': {
-                'broadcast': "广播 失败的! 错误: ",
-                'funds': "错误: 不够 资金",
+                'broadcast': "广播失败! 错误: ",
+                'funds': "错误: 资金不足",
                 'cancel': "交易已取消",
             },
         },
 
         // Tab text
-        'create-wallet': "创造 钱包",
-        'import-wallet': "进口 钱包",
-        'your-wallet': "你的 钱包",
+        'create-wallet': "创建钱包",
+        'import-wallet': "导入钱包",
+        'your-wallet': "你的钱包",
         'send': "发送",
         'tx-history': "历史",
-        'chain-info': "网络 信息",
-        'settings': "设定值"
+        'chain-info': "网络信息",
+        'settings': "设置"
     },
 
     'ja': {
