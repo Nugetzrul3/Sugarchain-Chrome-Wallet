@@ -47,18 +47,19 @@
     <div class="importShow" style="padding-top: 5px; padding-bottom: 5px;">
         <input type="text" class="form-control docs-input" id="wifInput" placeholder="Sugarchain WIF">
     </div>
-    <button class="btn btn-primary" id="wifImport" style="width: 100%;">Import WIF</button>
+    <div class="container text-center">
+        <button class="btn btn-primary" id="wifImport" style="width: 100%;">Import WIF</button>
+        <div class="legacyShow">
+            <span id="legacy">Legacy address:</span> <span id="showLegacy"></span>
+        </div>
 
-    <div class="legacyShow">
-        <span id="legacy">Legacy address:</span> <span id="showLegacy"></span>
-    </div>
+        <div class="segwitShow">
+            <span id="segwit">Segwit address:</span> <span id="showSegwit"></span>
+        </div>
 
-    <div class="segwitShow">
-        <span id="segwit">Segwit address:</span> <span id="showSegwit"></span>
-    </div>
-
-    <div class="bech32Show">
-        <span id="bech32">Bech32 address:</span> <span id="showBech32"></span>
+        <div class="bech32Show">
+            <span id="bech32">Bech32 address:</span> <span id="showBech32"></span>
+        </div>
     </div>
 </body>
 <script src="js/import.js"></script>
