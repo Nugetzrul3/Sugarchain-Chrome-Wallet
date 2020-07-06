@@ -221,18 +221,18 @@ var lang = {
 
     'zh': {
         // Page text
-        'current-balance': "当前 平衡:",
-        'total-received': "总 被认为标准的:",
-        'total-sent': "总 已发送:",
+        'current-balance': "当前余额:",
+        'total-received': "接收总额:",
+        'total-sent': "发送总额:",
 
         // Tab text
-        'create-wallet': "创造 钱包",
-        'import-wallet': "进口 钱包",
-        'your-wallet': "你的 钱包",
+        'create-wallet': "创建钱包",
+        'import-wallet': "导入钱包",
+        'your-wallet': "你的钱包",
         'send': "发送",
-        'tx-history': "历史",
-        'chain-info': "网络 信息",
-        'settings': "设定值"
+        'tx-history': "历史信息",
+        'chain-info': "网络信息",
+        'settings': "设置"
     },
 
     'ja': {
