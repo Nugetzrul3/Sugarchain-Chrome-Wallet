@@ -30,7 +30,7 @@ window.onload = function (){
     apiget = localStorage.getItem("apiSet")
 
     // Set history page to open to explorer, sets placeholder to testnet or mainnet prefix & sets ticker according to mainnet or testnet
-    if (apiget == "mainnet") {
+    if (apiget == "mainnet" || apiget == null) {
         api = "https://api.sugarchain.org"
         prefix = "SUGAR"
         inputPlaceholder.attr("placeholder", "sugar1q...")

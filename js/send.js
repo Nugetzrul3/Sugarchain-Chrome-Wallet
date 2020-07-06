@@ -24,7 +24,7 @@ window.onload = function() {
     apiget = localStorage.getItem("apiSet")
 
     // Set history page to open to explorer & sets placeholder to testnet or mainnet prefix
-    if (apiget == "mainnet") {
+    if (apiget == "mainnet" || apiget == null) {
         api = "https://api.sugarchain.org"
         inputPlaceholder.attr("placeholder", "sugar1q...")
         href = "https://sugarchain.org/explorer/#/address/" + address

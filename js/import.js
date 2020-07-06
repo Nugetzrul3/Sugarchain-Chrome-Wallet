@@ -13,7 +13,7 @@ window.onload = function() {
     var apiget = localStorage.getItem("apiSet")
 
     // Sets History Tab to open to explorer
-    if (apiget == "mainnet") {
+    if (apiget == "mainnet" || apiget == null) {
         href = "https://sugarchain.org/explorer/#/address/" + getaddress
     }
     else if (apiget == "testnet") {
