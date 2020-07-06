@@ -21,7 +21,12 @@ window.onload = function() {
     }
     $("#history").attr("href", href)
 
-    selectedEndpoint.value = localStorage.getItem("apiSet")
+    if (apiget == null) {
+        selectedEndpoint.value = "mainnet"
+    }
+    else {
+        selectedEndpoint.value = localStorage.getItem("apiSet")
+    }
 }
 
 selectedEndpoint.onchange = function () {

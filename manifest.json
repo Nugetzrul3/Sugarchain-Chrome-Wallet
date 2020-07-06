@@ -7,5 +7,6 @@
         "default_popup": "overlay.html",
         "default_title": "Sugarchain Wallet",
         "default_icon": "img/logo.png"
-    }
+    },
+    "icons": {"48": "img/icon48.png"}
 }
