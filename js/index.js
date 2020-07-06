@@ -43,8 +43,8 @@ var lang = {
 
     'zh': {
         // Page text
-        'create-wallet-button': "创造 钱包",
-        'import-wallet-button': "进口 钱包",
+        'create-wallet-button': "创建钱包",
+        'import-wallet-button': "导入钱包",
     },
 
     'ja': {
