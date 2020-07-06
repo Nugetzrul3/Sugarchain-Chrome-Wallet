@@ -224,21 +224,21 @@ var lang = {
 
     'zh': {
         // Page text
-        'wifImport': "进口 WIF",
-        'legacy': "Legacy 地址:",
-        'segwit': "Segwit 地址:",
-        'bech32': "Bech32 地址:",
-        'alert1': "WIF 进口的 成功地",
-        "alert2": "WIF 无效",
+        'wifImport': "导入WIF",
+        'legacy': "Legacy地址:",
+        'segwit': "Segwit地址:",
+        'bech32': "Bech32地址:",
+        'alert1': "导入WIF地址成功",
+        "alert2": "无效的WIF",
 
         // Tab text
-        'create-wallet': "创造 钱包",
-        'import-wallet': "进口 钱包",
-        'your-wallet': "你的 钱包",
+        'create-wallet': "创建钱包",
+        'import-wallet': "导入钱包",
+        'your-wallet': "你的钱包",
         'send': "发送",
         'tx-history': "历史",
-        'chain-info': "网络 信息",
-        'settings': "设定值"
+        'chain-info': "网络信息",
+        'settings': "设置"
     },
 
     'ja': {
