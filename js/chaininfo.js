@@ -174,18 +174,18 @@ var lang = {
 
     'zh': {
         // Page text
-        'block-height': "块 高度:",
-        'net-hash': "网络 哈希值:",
-        'circ-supply': "输:",
+        'block-height': "当前高度:",
+        'net-hash': "全网算力:",
+        'circ-supply': "流通总量:",
 
         // Tab text
-        'create-wallet': "创造 钱包",
-        'import-wallet': "进口 钱包",
-        'your-wallet': "你的 钱包",
+        'create-wallet': "创建钱包",
+        'import-wallet': "导入钱包",
+        'your-wallet': "你的钱包",
         'send': "发送",
         'tx-history': "历史",
-        'chain-info': "网络 信息",
-        'settings': "设定值"
+        'chain-info': "网络信息",
+        'settings': "设置"
     },
 
     'ja': {
