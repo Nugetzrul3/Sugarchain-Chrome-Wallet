@@ -256,6 +256,11 @@ var lang = {
                 'cancel': "Transaction Cancelled",
             },
         },
+        'logoutreminder': {
+            'part1': "Remember to",
+            'logoutlink': "Logout",
+            'part2': "before exiting Chrome",
+        },
 
 
         // Tab text
@@ -282,6 +287,11 @@ var lang = {
                 'cancel': "Transaction Annulé",
             },
         },
+        'logoutreminder': {
+            'part1': "Se souvenir de",
+            'logoutlink': "Se Déconnecter",
+            'part2': "avant de sortir Chrome",
+        },
 
         // Tab text
         'create-wallet': "Créer Portefeuille",
@@ -305,6 +315,11 @@ var lang = {
                 'funds': "오류: 부족한 자금",
                 'cancel': "트랜잭션 취소 된",
             },
+        },
+        'logoutreminder': {
+            'part1': "기억해",
+            'logoutlink': "로그 아웃",
+            'part2': "종료하기 전에",
         },
 
         // Tab text
@@ -330,6 +345,11 @@ var lang = {
                 'cancel': "Transaksi Dibatalkan",
             },
         },
+        'logoutreminder': {
+            'part1': "Ingat untuk",
+            'logoutlink': "Keluar",
+            'part2': "sebelum keluar Chrome",
+        },
 
         // Tab text
         'create-wallet': "Membuat Dompet",
@@ -353,6 +373,11 @@ var lang = {
                 'funds': "Error: No es Suficiente fondos",
                 'cancel': "Transacción Anulado",
             },
+        },
+        'logoutreminder': {
+            'part1': "Recuerda a",
+            'logoutlink': "Cerrar sesión",
+            'part2': "antes de irse Chrome",
         },
 
         // Tab text
@@ -378,6 +403,11 @@ var lang = {
                 'cancel': "трансакция отменен",
             },
         },
+        'logoutreminder': {
+            'part1': "Помните в",
+            'logoutlink': "Выйти",
+            'part2': "перед выходом",
+        },
 
         // Tab text
         'create-wallet': "Кошелька Создайте",
@@ -402,13 +432,18 @@ var lang = {
                 'cancel': "交易已取消",
             },
         },
+        'logoutreminder': {
+            'part1': "记得 至",
+            'logoutlink': "登出",
+            'part2': "退出前 Chrome",
+        },
 
         // Tab text
         'create-wallet': "创建钱包",
         'import-wallet': "导入钱包",
         'your-wallet': "你的钱包",
         'send': "发送",
-        'tx-history': "历史",
+        'tx-history': "历史信息",
         'chain-info': "网络信息",
         'settings': "设置"
     },
@@ -425,6 +460,11 @@ var lang = {
                 'funds': "エラー: 十分ではない 資金",
                 'cancel': "トランザクション キャンセル",
             },
+        },
+        'logoutreminder': {
+            'part1': "覚えて に",
+            'logoutlink': "ログアウト",
+            'part2': "出る前に Chrome",
         },
 
         // Tab text
@@ -445,6 +485,9 @@ function setSendPageLang() {
         $("#send-to").text(lang['en']['send-to'])
         $("#amount-sugar").text(lang['en']['amount-sugar'])
         $("#sendTx").text(lang['en']['sendTx'])
+        $("#part1").text(lang['en']['logoutreminder']['part1'])
+        $("#logoutlink").text(lang['en']['logoutreminder']['logoutlink'])
+        $("#part2").text(lang['en']['logoutreminder']['part2'])
         errororsuccess = lang['en']['showErrororSuccess']
 
         // Tab text
@@ -462,6 +505,9 @@ function setSendPageLang() {
         $("#send-to").text(lang[localStorage.getItem("lang")]['send-to'])
         $("#amount-sugar").text(lang[localStorage.getItem("lang")]['amount-sugar'])
         $("#sendTx").text(lang[localStorage.getItem("lang")]['sendTx'])
+        $("#part1").text(lang[localStorage.getItem("lang")]['logoutreminder']['part1'])
+        $("#logoutlink").text(lang[localStorage.getItem("lang")]['logoutreminder']['logoutlink'])
+        $("#part2").text(lang[localStorage.getItem("lang")]['logoutreminder']['part2'])
         errororsuccess = lang[localStorage.getItem("lang")]['showErrororSuccess']
 
         // Tab text

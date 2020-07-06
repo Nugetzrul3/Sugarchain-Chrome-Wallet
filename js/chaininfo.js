@@ -80,6 +80,11 @@ var lang = {
         'block-height': "Block Height:",
         'net-hash': "Network Hashrate:",
         'circ-supply': "Circulating Supply:",
+        'logoutreminder': {
+            'part1': "Remember to",
+            'logoutlink': "Logout",
+            'part2': "before exiting Chrome",
+        },
 
         // Tab text
         'create-wallet': "Create Wallet",
@@ -97,6 +102,11 @@ var lang = {
         'block-height': "Bloc Hauteur:",
         'net-hash': "Réseau Taux de Hachage:",
         'circ-supply': "Circulé Réserve:",
+        'logoutreminder': {
+            'part1': "Se souvenir de",
+            'logoutlink': "Se Déconnecter",
+            'part2': "avant de sortir Chrome",
+        },
 
         // Tab text
         'create-wallet': "Créer Portefeuille",
@@ -113,6 +123,11 @@ var lang = {
         'block-height': "블록 신장:",
         'net-hash': "회로망 해시비율:",
         'circ-supply': "순환 공급품:",
+        'logoutreminder': {
+            'part1': "기억해",
+            'logoutlink': "로그 아웃",
+            'part2': "종료하기 전에",
+        },
 
         // Tab text
         'create-wallet': "창조하다 지갑",
@@ -129,6 +144,11 @@ var lang = {
         'block-height': "tinggi blok:",
         'net-hash': "Jaringan Tingkat-Hash:",
         'circ-supply': "Beredar Pasokan:",
+        'logoutreminder': {
+            'part1': "Ingat untuk",
+            'logoutlink': "Keluar",
+            'part2': "sebelum keluar Chrome",
+        },
 
         // Tab text
         'create-wallet': "Membuat Dompet",
@@ -145,6 +165,11 @@ var lang = {
         'block-height': "Bloque Altura:",
         'net-hash': "Red Tasa de Hash:",
         'circ-supply': "Circulante Surtido:",
+        'logoutreminder': {
+            'part1': "Recuerda a",
+            'logoutlink': "Cerrar sesión",
+            'part2': "antes de irse Chrome",
+        },
 
         // Tab text
         'create-wallet': "Billetera Crear",
@@ -161,6 +186,11 @@ var lang = {
         'block-height': "Высота блока:",
         'net-hash': "Хешрейт:",
         'circ-supply': "Предложение:",
+        'logoutreminder': {
+            'part1': "Помните в",
+            'logoutlink': "Выйти",
+            'part2': "перед выходом",
+        },
     
         // Tab text
         'create-wallet': "Создать кошелек",
@@ -177,6 +207,11 @@ var lang = {
         'block-height': "当前高度:",
         'net-hash': "全网算力:",
         'circ-supply': "流通总量:",
+        'logoutreminder': {
+            'part1': "记得 至",
+            'logoutlink': "登出",
+            'part2': "退出前 Chrome",
+        },
 
         // Tab text
         'create-wallet': "创建钱包",
@@ -193,6 +228,11 @@ var lang = {
         'block-height': "ブロック 高さ:",
         'net-hash': "通信網 ハッシュレート:",
         'circ-supply': "サプライ:",
+        'logoutreminder': {
+            'part1': "覚えて に",
+            'logoutlink': "ログアウト",
+            'part2': "出る前に Chrome",
+        },
 
         // Tab text
         'create-wallet': "作成する 財布",
@@ -211,6 +251,9 @@ function setChainInfoLang() {
         $("#block-height").text(lang['en']['block-height'])
         $("#net-hash").text(lang['en']['net-hash'])
         $("#circ-supply").text(lang['en']['circ-supply'])
+        $("#part1").text(lang['en']['logoutreminder']['part1'])
+        $("#logoutlink").text(lang['en']['logoutreminder']['logoutlink'])
+        $("#part2").text(lang['en']['logoutreminder']['part2'])
 
         // Tab text
         $("#create-wallet").text(lang['en']['create-wallet'])
@@ -226,6 +269,9 @@ function setChainInfoLang() {
         $("#block-height").text(lang[localStorage.getItem("lang")]['block-height'])
         $("#net-hash").text(lang[localStorage.getItem("lang")]['net-hash'])
         $("#circ-supply").text(lang[localStorage.getItem("lang")]['circ-supply'])
+        $("#part1").text(lang[localStorage.getItem("lang")]['logoutreminder']['part1'])
+        $("#logoutlink").text(lang[localStorage.getItem("lang")]['logoutreminder']['logoutlink'])
+        $("#part2").text(lang[localStorage.getItem("lang")]['logoutreminder']['part2'])
 
         // Tab text
         $("#create-wallet").text(lang[localStorage.getItem("lang")]['create-wallet'])

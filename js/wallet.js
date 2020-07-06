@@ -127,6 +127,12 @@ var lang = {
     'en': {
         // Page text
         'current-balance': "Current Balance:",
+        'logoutreminder': {
+            'part1': "Remember to",
+            'logoutlink': "Logout",
+            'part2': "before exiting Chrome",
+        },
+
         // Tab text
         'create-wallet': "Create Wallet",
         'import-wallet': "Import Wallet",
@@ -141,6 +147,11 @@ var lang = {
     'fr': {
         // Page text
         'current-balance': "Existant équilibre:",
+        'logoutreminder': {
+            'part1': "Se souvenir de",
+            'logoutlink': "Se Déconnecter",
+            'part2': "avant de sortir Chrome",
+        },
 
         // Tab text
         'create-wallet': "Créer Portefeuille",
@@ -155,6 +166,12 @@ var lang = {
     'kr': {
         // Page text
         'current-balance': "흘림글씨의 밸런스:",
+        'logoutreminder': {
+            'part1': "기억해",
+            'logoutlink': "로그 아웃",
+            'part2': "종료하기 전에",
+        },
+
         // Tab text
         'create-wallet': "창조하다 지갑",
         'import-wallet': "수입 지갑",
@@ -168,6 +185,11 @@ var lang = {
     'id': {
         // Page text
         'current-balance': "Saldo Sekarang:",
+        'logoutreminder': {
+            'part1': "Ingat untuk",
+            'logoutlink': "Keluar",
+            'part2': "sebelum keluar Chrome",
+        },
 
         // Tab text
         'create-wallet': "Membuat Dompet",
@@ -182,6 +204,11 @@ var lang = {
     'es': {
         // Page text
         'current-balance': "Presente Saldo:",
+        'logoutreminder': {
+            'part1': "Recuerda a",
+            'logoutlink': "Cerrar sesión",
+            'part2': "antes de irse Chrome",
+        },
 
         // Tab text
         'create-wallet': "Billetera Crear",
@@ -196,6 +223,11 @@ var lang = {
     'ru': {
         // Page text
         'current-balance': "современный Баланс:",
+        'logoutreminder': {
+            'part1': "Помните в",
+            'logoutlink': "Выйти",
+            'part2': "перед выходом",
+        },
 
         // Tab text
         'create-wallet': "Кошелька Создайте",
@@ -210,6 +242,11 @@ var lang = {
     'zh': {
         // Page text
         'current-balance': "当前余额:",
+        'logoutreminder': {
+            'part1': "记得 至",
+            'logoutlink': "登出",
+            'part2': "退出前 Chrome",
+        },
 
         // Tab text
         'create-wallet': "创建钱包",
@@ -224,6 +261,11 @@ var lang = {
     'ja': {
         // Page text
         'current-balance': "電流 残高:",
+        'logoutreminder': {
+            'part1': "覚えて に",
+            'logoutlink': "ログアウト",
+            'part2': "出る前に Chrome",
+        },
 
         // Tab text
         'create-wallet': "作成する 財布",
@@ -240,6 +282,9 @@ function setWalletInfoLang() {
     if (localStorage['lang'] == null) {
         // Page text
         $("#current-balance").text(lang['en']['current-balance'])
+        $("#part1").text(lang['en']['logoutreminder']['part1'])
+        $("#logoutlink").text(lang['en']['logoutreminder']['logoutlink'])
+        $("#part2").text(lang['en']['logoutreminder']['part2'])
 
         // Tab text
         $("#create-wallet").text(lang['en']['create-wallet'])
@@ -253,6 +298,9 @@ function setWalletInfoLang() {
     else {
         // Page text
         $("#current-balance").text(lang[localStorage.getItem("lang")]['current-balance'])
+        $("#part1").text(lang[localStorage.getItem("lang")]['logoutreminder']['part1'])
+        $("#logoutlink").text(lang[localStorage.getItem("lang")]['logoutreminder']['logoutlink'])
+        $("#part2").text(lang[localStorage.getItem("lang")]['logoutreminder']['part2'])
 
         // Tab text
         $("#create-wallet").text(lang[localStorage.getItem("lang")]['create-wallet'])

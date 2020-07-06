@@ -115,6 +115,11 @@ var lang = {
         'bech32': "Bech32 address:",
         'alert1': "WIF Imported Successfully",
         "alert2": "WIF Invalid",
+        'logoutreminder': {
+            'part1': "Remember to",
+            'logoutlink': "Logout",
+            'part2': "before exiting Chrome",
+        },
 
         // Tab text
         'create-wallet': "Create Wallet",
@@ -135,6 +140,11 @@ var lang = {
         'bech32': "Bech32 Adresse:",
         'alert1': "WIF Importé Succès",
         "alert2": "WIF invalide",
+        'logoutreminder': {
+            'part1': "Se souvenir de",
+            'logoutlink': "Se Déconnecter",
+            'part2': "avant de sortir Chrome",
+        },
 
         // Tab text
         'create-wallet': "Créer Portefeuille",
@@ -154,6 +164,11 @@ var lang = {
         'bech32': "Bech32 주소를:",
         'alert1': "WIF 수입품 성공적으로",
         "alert2": "WIF 무효로 하는",
+        'logoutreminder': {
+            'part1': "기억해",
+            'logoutlink': "로그 아웃",
+            'part2': "종료하기 전에",
+        },
 
         // Tab text
         'create-wallet': "창조하다 지갑",
@@ -173,6 +188,11 @@ var lang = {
         'bech32': "Bech32 Alamat:",
         'alert1': "WIF yg diimpor Berhasil",
         "alert2": "WIF batal",
+        'logoutreminder': {
+            'part1': "Ingat untuk",
+            'logoutlink': "Keluar",
+            'part2': "sebelum keluar Chrome",
+        },
 
         // Tab text
         'create-wallet': "Membuat Dompet",
@@ -192,6 +212,11 @@ var lang = {
         'bech32': "Bech32 Alocución:",
         'alert1': "WIF Importado Exitosamente",
         "alert2": "WIF inválido",
+        'logoutreminder': {
+            'part1': "Recuerda a",
+            'logoutlink': "Cerrar sesión",
+            'part2': "antes de irse Chrome",
+        },
 
         // Tab text
         'create-wallet': "Billetera Crear",
@@ -211,6 +236,11 @@ var lang = {
         'bech32': "Bech32 адрес:",
         'alert1': "WIF ключ успешно импортирован",
         "alert2": "Недействительный WIF",
+        'logoutreminder': {
+            'part1': "Помните в",
+            'logoutlink': "Выйти",
+            'part2': "перед выходом",
+        },
     
         // Tab text
         'create-wallet': "Создать кошелек",
@@ -230,6 +260,11 @@ var lang = {
         'bech32': "Bech32地址:",
         'alert1': "导入WIF地址成功",
         "alert2": "无效的WIF",
+        'logoutreminder': {
+            'part1': "记得 至",
+            'logoutlink': "登出",
+            'part2': "退出前 Chrome",
+        },
 
         // Tab text
         'create-wallet': "创建钱包",
@@ -249,6 +284,11 @@ var lang = {
         'bech32': "Bech32 住所:",
         'alert1': "WIF 舶来 成功した",
         "alert2": "WIF 病弱な",
+        'logoutreminder': {
+            'part1': "覚えて に",
+            'logoutlink': "ログアウト",
+            'part2': "出る前に Chrome",
+        },
 
         // Tab text
         'create-wallet': "作成する 財布",
@@ -268,6 +308,9 @@ function setImportLang() {
         $("#legacy").text(lang['en']['legacy'])
         $("#wifImport").text(lang['en']['wifImport'])
         $("#bech32").text(lang['en']['bech32'])
+        $("#part1").text(lang['en']['logoutreminder']['part1'])
+        $("#logoutlink").text(lang['en']['logoutreminder']['logoutlink'])
+        $("#part2").text(lang['en']['logoutreminder']['part2'])
         alert1 = lang['en']['alert1']
         alert2 = lang['en']['alert2']
 
@@ -286,6 +329,9 @@ function setImportLang() {
         $("#legacy").text(lang[localStorage.getItem("lang")]['legacy'])
         $("#wifImport").text(lang[localStorage.getItem("lang")]['wifImport'])
         $("#bech32").text(lang[localStorage.getItem("lang")]['bech32'])
+        $("#part1").text(lang[localStorage.getItem("lang")]['logoutreminder']['part1'])
+        $("#logoutlink").text(lang[localStorage.getItem("lang")]['logoutreminder']['logoutlink'])
+        $("#part2").text(lang[localStorage.getItem("lang")]['logoutreminder']['part2'])
         alert1 = lang[localStorage.getItem("lang")]['alert1']
         alert2 = lang[localStorage.getItem("lang")]['alert2']
 

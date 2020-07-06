@@ -114,6 +114,11 @@ var lang = {
         'your-wif': "Your WIF:",
         'importantmsg': "IMPORTANT: Make sure you store your WIF key in a secure place before doing anything else",
         'alertmsg': "Address Generated Successfully",
+        'logoutreminder': {
+            'part1': "Remember to",
+            'logoutlink': "Logout",
+            'part2': "before exiting Chrome",
+        },
 
         // Tab text
         'create-wallet': "Create Wallet",
@@ -134,6 +139,11 @@ var lang = {
         'your-wif': "Votre WIF:",
         'importantmsg': "IMPORTANT: Assurez-vous conserver votre WIF clé dans un sécurise endroit avant faire quelque chose autre",
         'alertmsg': "Adresse Généré Avec succès",
+        'logoutreminder': {
+            'part1': "Se souvenir de",
+            'logoutlink': "Se Déconnecter",
+            'part2': "avant de sortir Chrome",
+        },
 
         // Tab text
         'create-wallet': "Créer Portefeuille",
@@ -153,6 +163,11 @@ var lang = {
         'your-wif': "너의 WIF:",
         'importantmsg': "중대한: 하다 확실한 당신 저장되다 너의 WIF 열쇠 안에 튼튼한 곳 전에 하기 아무것도 그밖에",
         'alertmsg': "주소 생성됨 성공적으로",
+        'logoutreminder': {
+            'part1': "기억해",
+            'logoutlink': "로그 아웃",
+            'part2': "종료하기 전에",
+        },
 
         // Tab text
         'create-wallet': "창조하다 지갑",
@@ -172,6 +187,11 @@ var lang = {
         'your-wif': "Anda WIF:",
         'importantmsg': "Penting: Yakinkan kamu menyimpan Anda WIF kunci di sebuah tempat yang aman sebelum perbuatan ada yang lain",
         'alertmsg': "Alamat Dihasilkan Berhasil",
+        'logoutreminder': {
+            'part1': "Ingat untuk",
+            'logoutlink': "Keluar",
+            'part2': "sebelum keluar Chrome",
+        },
 
         // Tab text
         'create-wallet': "Membuat Dompet",
@@ -191,6 +211,11 @@ var lang = {
         'your-wif': "Tu WIF:",
         'importantmsg': "Importante: Asegurarse tú almacenar Tu WIF llave en un seguro lugar antes de hacer Algo más",
         'alertmsg': "Alocución Generado Exitosamente",
+        'logoutreminder': {
+            'part1': "Recuerda a",
+            'logoutlink': "Cerrar sesión",
+            'part2': "antes de irse Chrome",
+        },
 
         // Tab text
         'create-wallet': "Billetera Crear",
@@ -210,6 +235,11 @@ var lang = {
         'your-wif': "Ваш WIF:",
         'importantmsg': "Важный: Убедитесь, что вы храните ваш ключ WIF в безопасном месте, прежде чем делать что-либо еще",
         'alertmsg': "Адрес Сформирован Успешно",
+        'logoutreminder': {
+            'part1': "Помните в",
+            'logoutlink': "Выйти",
+            'part2': "перед выходом",
+        },
 
         // Tab text
         'create-wallet': "Кошелька Создайте",
@@ -229,6 +259,11 @@ var lang = {
         'your-wif': "你的WIF:",
         'importantmsg': "重要: 在执行其他任何操作之前，请确保将WIF密钥存储在安全的地方",
         'alertmsg': "地址产生的成功",
+        'logoutreminder': {
+            'part1': "记得 至",
+            'logoutlink': "登出",
+            'part2': "退出前 Chrome",
+        },
 
         // Tab text
         'create-wallet': "创建钱包",
@@ -248,6 +283,11 @@ var lang = {
         'your-wif': "きみの WIF:",
         'importantmsg': "重要: 他の作業を行う前に、WIFキーを安全な場所に保管してください。",
         'alertmsg': "住所 生成された 成功した",
+        'logoutreminder': {
+            'part1': "覚えて に",
+            'logoutlink': "ログアウト",
+            'part2': "出る前に Chrome",
+        },
 
         // Tab text
         'create-wallet': "作成する 財布",
@@ -269,6 +309,9 @@ function setMainLang() {
         $("#your-address").text(lang['en']['your-address'])
         $("#your-wif").text(lang['en']['your-wif'])
         $("#importantmsg").text(lang['en']['importantmsg'])
+        $("#part1").text(lang['en']['logoutreminder']['part1'])
+        $("#logoutlink").text(lang['en']['logoutreminder']['logoutlink'])
+        $("#part2").text(lang['en']['logoutreminder']['part2'])
         alertmsg = lang['en']['alertmsg']
 
         // Tab text
@@ -287,6 +330,9 @@ function setMainLang() {
         $("#your-address").text(lang[localStorage.getItem("lang")]['your-address'])
         $("#your-wif").text(lang[localStorage.getItem("lang")]['your-wif'])
         $("#importantmsg").text(lang[localStorage.getItem("lang")]['importantmsg'])
+        $("#part1").text(lang[localStorage.getItem("lang")]['logoutreminder']['part1'])
+        $("#logoutlink").text(lang[localStorage.getItem("lang")]['logoutreminder']['logoutlink'])
+        $("#part2").text(lang[localStorage.getItem("lang")]['logoutreminder']['part2'])
         alertmsg = lang[localStorage.getItem("lang")]['alertmsg']
 
         // Tab text
