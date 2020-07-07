@@ -157,13 +157,13 @@ var lang = {
         'license': "Посмотреть лицензию",
 
         // Tab text
-        'create-wallet': "Кошелька Создайте",
-        'import-wallet': "Кошелька ввозить",
-        'your-wallet': "Кошелька Ваш",
-        'send': "послать",
-        'tx-history': "история",
-        'chain-info': "Информация сеть",
-        'settings': "настройки"
+        'create-wallet': "Создать кошелек",
+        'import-wallet': "Импорт кошелька",
+        'your-wallet': "Ваш кошелек",
+        'send': "Отправить",
+        'tx-history': "История",
+        'chain-info': "Информация о сети",
+        'settings': "Настройки"
     },
 
     'zh': {

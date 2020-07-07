@@ -194,7 +194,7 @@ var lang = {
     
         // Tab text
         'create-wallet': "Создать кошелек",
-        'import-wallet': "Импортировать кошелек",
+        'import-wallet': "Импорт кошелька",
         'your-wallet': "Ваш кошелек",
         'send': "Отправить",
         'tx-history': "История",
