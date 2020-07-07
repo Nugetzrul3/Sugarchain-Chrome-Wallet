@@ -231,12 +231,12 @@ var lang = {
 
     'ru': {
         // Page text
-        'generateAddress': "генерировать Адреса",
-        'addressTypeLabel': "Адреса Тип:",
-        'your-address': "Ваш Адреса:",
-        'your-wif': "Ваш WIF:",
-        'importantmsg': "Важный: Убедитесь, что вы храните ваш ключ WIF в безопасном месте, прежде чем делать что-либо еще",
-        'alertmsg': "Адрес Сформирован Успешно",
+        'generateAddress': "Сгенерировать адрес",
+        'addressTypeLabel': "Тип адреса:",
+        'your-address': "Ваш адрес:",
+        'your-wif': "Ваш WIF ключ:",
+        'importantmsg': "Важно: Убедитесь, что вы храните ваш ключ WIF в безопасном месте, прежде чем делать что-либо еще",
+        'alertmsg': "Адрес сгенерировано успешно",
         'logoutreminder': {
             'part1': "Помните в",
             'logoutlink': "Выйти",
@@ -244,13 +244,13 @@ var lang = {
         },
 
         // Tab text
-        'create-wallet': "Кошелька Создайте",
-        'import-wallet': "Кошелька ввозить",
-        'your-wallet': "Кошелька Ваш",
-        'send': "послать",
-        'tx-history': "история",
-        'chain-info': "Информация сеть",
-        'settings': "настройки"
+        'create-wallet': "Создать кошелек",
+        'import-wallet': "Импорт кошелька",
+        'your-wallet': "Ваш кошелек",
+        'send': "Отправить",
+        'tx-history': "История",
+        'chain-info': "Информация о сети",
+        'settings': "Настройки"
     },
 
     'zh': {
