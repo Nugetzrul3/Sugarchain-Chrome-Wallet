@@ -19,4 +19,4 @@ Light sugarchain Web wallet in the form of a chrome extension which utilises bit
 
 - [x] Add send function: https://github.com/Nugetzrul3/Sugarchain-Chrome-Wallet/pull/3
 - [x] Fix minor bugs with receiving and sending sugar
-- [ ] Publish to chrome webstore!!!
+- [x] Publish to chrome webstore!!! Success!!! :grin: https://chrome.google.com/webstore/detail/sugarchain-wallet-extensi/pgojdfajgcjjpjnbpfaelnpnjocakldb
