@@ -8,5 +8,8 @@
         "default_title": "Sugarchain Wallet",
         "default_icon": "img/logo.png"
     },
-    "icons": {"48": "img/icon48.png"}
+    "icons": {
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+    }
 }
