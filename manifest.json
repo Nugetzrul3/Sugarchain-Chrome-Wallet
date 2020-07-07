@@ -2,7 +2,7 @@
     "name": "Sugarchain Wallet Extension",
     "version": "1.0",
     "manifest_version": 2,
-    "description": "Light Wallet for Sugarchain as an Extension. Source code may be viewed here: https://github.com/Nugetzrul3/Sugarchain-Chrome-Wallet",
+    "description": "Light Web Wallet for Sugarchain as a Chrome Extension.",
     "browser_action": {
         "default_popup": "overlay.html",
         "default_title": "Sugarchain Wallet",
