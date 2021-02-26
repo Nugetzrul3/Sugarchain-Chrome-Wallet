@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">    
+    <link href="css/settings.css" rel="stylesheet">
+    <link href="css/entypo.css" rel="stylesheet">
+
+    <!--JS-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="main.html" tkey="your-wallet">Create Wallet</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="na-link" href="import.html">Import Wallet</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="balance.html">Your Wallet</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="send.html">Send</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" id="history" href="#" target="_blank">History</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="chaininfo.html">Chain info</a>
+        </li>
+
+        <li class="nav-item active">
+            <a class="nav-link" href="settings.html">Settings</a>
+        </li>
+    </ul>
+
+    <div class="form-group">
+        <label for="languageSelect">Language</label>
+        <select class="form-control" id="languageSelect">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="kr">한국어</option>
+            <option value="id">Indonesian</option>
+            <option value="es">Español</option>
+            <option value="ru">Русский</option>
+            <option value="zh">简体中文</option>
+            <option value="ja">日本語</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="endpointSelect">Endpoint</label>
+        <select class="form-control" id="endpointSelect">
+            <option value="1" id="end1">Node 1 | Ping: </option>
+            <option value="2" id="end2">Node 2 | Ping: </option>
+        </select>
+    </div>
+
+    <div class="container text-center">
+        <a href="index.html" class="btn btn-danger" id="logoutButton" style="width: 100%;">Logout</a>
+    </div>
+
+</body>
+<script src="js/settings.js"></script>
+<footer class="mb-3" style="bottom: 0px;">
+    <div class="container text-center">
+        <h6>View <a href="LICENSE" target="_blank">License</a></h6>
+        <h6>Made with <span class="entypo heart text-danger" style="font-size: 20px;"></span> by <a target="_blank" href="https://github.com/Nugetzrul3/Sugarchain-Chrome-Wallet">Nugetzrul3</a></h6>
+    </div>
+</footer>
+</html>

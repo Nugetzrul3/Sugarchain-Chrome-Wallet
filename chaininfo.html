@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">    
+    <link href="css/chaininfo.css" rel="stylesheet">
+    <link href="css/entypo.css" rel="stylesheet">
+
+    <!--JS-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="main.html" tkey="your-wallet">Create Wallet</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="na-link" href="import.html">Import Wallet</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="balance.html">Your Wallet</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="send.html">Send</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" id="history" href="#" target="_blank">History</a>
+        </li>
+
+        <li class="nav-item active">
+            <a class="nav-link" href="chaininfo.html">Chain info</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="settings.html">Settings</a>
+        </li>
+
+    </ul>
+
+    <div class="displayHeight">
+        Block Height: <span id="blockHeight">loading...</span>
+    </div>
+
+    <div class="displayHashrate">
+        Network Hashrate: <span id="netHashrate">loading...</span>
+    </div>
+
+    <div class="displaySupply">
+        Circulating Supply: <span id="circSupply">loading...</span>
+    </div>
+
+    <div class="displayPriceBTC">
+        SUGAR/BTC: <span id="priceBTC">loading...</span>
+    </div>
+
+    <div class="displayPriceUSD">
+        SUGAR/USD: <span id="priceUSD">loading...</span>
+    </div>
+</body>
+<footer class="mb-3" style="bottom: 0px;">
+    <div class="container text-center">
+        <h5>Remember to <a href="settings.html">Logout</a> before exiting Chrome</h5>
+        <h6>Made with <span class="entypo heart text-danger" style="font-size: 20px;"></span> by <a target="_blank" href="https://github.com/Nugetzrul3/Sugarchain-Chrome-Wallet">Nugetzrul3</a></h6>
+    </div>
+<script src="js/chaininfo.js"></script>
+</footer>
+</html>

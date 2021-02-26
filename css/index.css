@@ -1,0 +1,7 @@
+body {
+    min-width: 300px; /* your desired width */
+    min-height: 100px;
+    max-width: 100%;
+    position: center;
+    vertical-align:middle;
+}

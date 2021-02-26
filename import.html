@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--CSS-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/import.css" rel="stylesheet">
+    <link href="css/entypo.css" rel="stylesheet">
+    
+    <!--JS-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="main.html" tkey="your-wallet">Create Wallet</a>
+        </li>
+
+        <li class="nav-item active">
+            <a class="na-link active" href="import.html">Import Wallet</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="balance.html" href="#">Your Wallet</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="send.html">Send</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" id="history" target="_blank">History</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="chaininfo.html">Chain info</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="settings.html">Settings</a>
+        </li>
+    </ul>
+
+    <div class="importShow" style="padding-top: 5px; padding-bottom: 5px;">
+        <input type="text" class="form-control docs-input" id="wifInput" placeholder="Import Sugarchain WIF key">
+    </div>
+    <button class="btn btn-primary" id="wifImport" style="width: 100%;">Import WIF</button>
+
+    <div class="legacyShow">
+        Legacy address: <span id="showLegacy"></span>
+    </div>
+
+    <div class="segwitShow">
+        Segwit address: <span id="showSegwit"></span>
+    </div>
+
+    <div class="bech32Show">
+        Bech32 address: <span id="showBech32"></span>
+    </div>
+</body>
+<script src="js/import.js"></script>
+<footer class="mb-3" style="bottom: 0px;">
+    <div class="container text-center">
+        <h5>Remember to <a href="settings.html">Logout</a> before exiting Chrome</h5>
+        <h6>Made with <span class="entypo heart text-danger" style="font-size: 20px;"></span> by <a target="_blank" href="https://github.com/Nugetzrul3/Sugarchain-Chrome-Wallet">Nugetzrul3</a></h6>
+    </div>
+</footer>
+</html>
