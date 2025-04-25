@@ -1,9 +1,9 @@
 {
     "name": "Sugarchain Wallet Extension",
-    "version": "1.1",
-    "manifest_version": 2,
+    "version": "1.2",
+    "manifest_version": 3,
     "description": "Light Web Wallet for Sugarchain as a Chrome Extension.",
-    "browser_action": {
+    "action": {
         "default_popup": "overlay.html",
         "default_title": "Sugarchain Wallet",
         "default_icon": "img/logo.png"
